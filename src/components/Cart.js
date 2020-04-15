@@ -14,7 +14,7 @@ const Cart = (props) => {
       setCartList(responseFromAPI.data);
       //console.log(responseFromAPI.data);
     });
-  }, [updateState]);
+  },[updateState]);
 
   const delete_from_cart = (id) => {
     ApiService.delete_from_cart(id).then((responseFromAPI) => {
@@ -39,7 +39,7 @@ const Cart = (props) => {
   /* 
   console.log('este es el subtotal')
   console.log(subTotal()) */
-  console.log(cartList)
+  //console.log(cartList)
   return (
     <div>
       <div>

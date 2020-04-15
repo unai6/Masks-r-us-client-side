@@ -1,10 +1,11 @@
 .background-color {
-    height:100vh;
-    background-color:#A5EAF4
+   
+    background-color:#A5EAF4;
+    height:100vh 
 }
 
 .card-container{
    
     background-color:rgb(77, 214, 233);
-        
+    margin-top:15vw
 }
