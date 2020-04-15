@@ -39,49 +39,11 @@ const Cart = (props) => {
   /* 
   console.log('este es el subtotal')
   console.log(subTotal()) */
-
+  console.log(cartList)
   return (
     <div>
       <div>
-        {/*    <nav classNameName="navbar navbar-expand-md navbar-dark bg-dark ">
-            <div className="container">
-              <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-                <span className="navbar-toggler-icon"></span>
-              </button>
-
-              <div className="collapse navbar-collapse justify-content-end" id="navbarsExampleDefault">
-                <ul className="navbar-nav m-auto">
-                  <li className="nav-item m-auto">
-                    <a className="nav-link" href="/">Home</a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="category">Categories</a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="/products">Product</a>
-                  </li>
-                  <li className="nav-item active">
-                    <a className="nav-link" href="/cart">Cart <span className="sr-only">(current)</span></a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="/contact">Contact</a>
-                  </li>
-                </ul>
-
-                <form className="form-inline my-2 my-lg-0">
-                  <div className="input-group input-group-sm">
-                    <div className="input-group-append">
-                     
-                    </div>
-                  </div>
-                  <a className="btn btn-success btn-sm ml-3" href="/cart">
-                    <i className="fa fa-shopping-cart"></i> Cart
-                    <span className="badge badge-light">{cartList.length}</span>
-                  </a>
-                </form>
-              </div>
-            </div>
-          </nav> */}
+    
 
         <section className="wishtitle jumbotron text-center">
           <div className="container">
@@ -113,6 +75,7 @@ const Cart = (props) => {
                     </tr>
                   </thead>
                   {cartList.map((productInCart) => {
+                    
                     return (
                       <tbody>
                         <tr>
@@ -121,7 +84,7 @@ const Cart = (props) => {
                               style={{ height: "40px" }}
                               src={productInCart.productId.photo}
                               alt=""
-                            />{" "}
+                            />
                           </td>
                           <td>{productInCart.productId.name}</td>
                           <td>Stock:{productInCart.stock}</td>
@@ -129,20 +92,17 @@ const Cart = (props) => {
                             <input
                               className="form-control"
                               type="number"
-                              value={productInCart.quantity}
+                              value= {productInCart.quantity}
                             />
                           </td>
                           <td className="text-right">
                             {productInCart.productId.originalPrice} €
                           </td>
                           <td className="text-right">
-                            {(
-                              productInCart.productId.originalPrice *
-                              productInCart.quantity
-                            ).toFixed(2)}{" "}
+                            {(productInCart.productId.originalPrice * productInCart.quantity*1).toFixed(2)}
                             €
                           </td>
-
+                      
                           <td className="text-right">
                             <button
                               onClick={() =>
@@ -150,8 +110,8 @@ const Cart = (props) => {
                               }
                               className="btn btn-sm btn-danger"
                             >
-                              <i className="fa fa-trash"></i>{" "}
-                            </button>{" "}
+                              <i className="fa fa-trash"></i>
+                            </button>
                           </td>
                         </tr>
                       </tbody>
@@ -181,7 +141,7 @@ const Cart = (props) => {
                     </td>
                     <td className="text-right">
                       <strong>
-                        {" "}
+                        
                         {Number(subTotal() * 1 + 6.9).toFixed(2)}€
                       </strong>
                     </td>
@@ -212,8 +172,8 @@ const Cart = (props) => {
               <div className="container">
                 <div className="row">
                   <div className="col-md-3 col-lg-4 col-xl-3">
-                    <h5>About</h5>
-                    <hr className="bg-dark mb-2 mt-0 d-inline-block mx-auto w-25" />
+                    <h5 className= 'text-center d-block'>About</h5>
+                    <hr className="bg-dark mb-2 mt-0 d-block mx-auto w-25" />
                     <p style={{ color: "black" }} className="mb-0">
                       Here you will find the best customer service Ever. Trust
                       us and you will no regret it.
@@ -221,23 +181,23 @@ const Cart = (props) => {
                   </div>
 
                   <div className="col-md-3 col-lg-2 col-xl-2 mx-auto">
-                    <h5>Others links</h5>
-                    <hr className="bg-dark mb-2 mt-0 d-inline-block mx-auto w-25" />
-                    <ul style={{ color: "black" }} className="list-unstyled">
+                    <h5 className= 'text-center d-block'>Others links</h5>
+                    <hr className="bg-dark mb-2 mt-0 d-block mx-auto w-25" />
+                    <ul  style={{ color: "black" }} className="list-unstyled text-center d-block">
                       <li>About us</li>
                       <li>FAQ</li>
                     </ul>
                   </div>
 
                   <div className="col-md-4 col-lg-3 col-xl-3">
-                    <h5>Contact</h5>
-                    <hr className="bg-dark mb-2 mt-0 d-inline-block mx-auto w-25" />
-                    <ul style={{ color: "black" }} className="list-unstyled">
+                    <h5 className= 'text-center d-block'>Contact</h5>
+                    <hr className="bg-dark mb-2 mt-0 d-block mx-auto w-25" />
+                    <ul style={{ color: "black" }} className="list-unstyled text-center d-block">
                       <li>
                         <i className="fa fa-home mr-2"></i> Mask 'R' us
                       </li>
                       <li>
-                        <i className="fa fa-envelope mr-2"></i>{" "}
+                        <i className="fa fa-envelope mr-2"></i>
                         maskrus@gmail.com
                       </li>
                       <li>
