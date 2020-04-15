@@ -49,6 +49,10 @@ class apiService {
     return this.auth.post(`/auth/user/${id}/edit-profile`, {email, shippingAdress, password})
   }
 
+  updateQuantity(id, quantity) {
+    return this.auth.post(`/products/addtocart/${id}`, {quantity})
+  }
+
 }
 
 const ApiService = new apiService();

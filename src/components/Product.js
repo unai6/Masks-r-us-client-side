@@ -5,38 +5,38 @@ import { needAuth } from "../lib/Auth-provider";
 import Loader from "react-loader-spinner";
 
 const Product = (props) => {
-
   const [isLoading, setIsLoading] = useState(true);
   const [theProduct, setTheProduct] = useState({});
-  const [inTheCart, setinTheCart] = useState(false)
-  const [theHeart, setTheHeart] = useState(false)
-
+  const [inTheCart, setinTheCart] = useState(false);
+  const [theHeart, setTheHeart] = useState(false);
 
   useEffect(() => {
     async function anyName() {
-      await ApiService.get_product_id(props.match.params.id)
-      .then((apiResponse) => {
-        console.log(apiResponse.data);
-        setTheProduct(apiResponse.data);
-      });
-    if (props.user) {
-      await ApiService.get_wishlist(props).then((responseFromAPI) => {
-          responseFromAPI.data.includes(props.match.params.id) ? (setTheHeart(true)) : (setTheHeart(false));
-        
-      });
-      await ApiService.get_cartlist(props).then((responseFromAPI) => {
-        
-          const productsID = responseFromAPI.data.map(prod => {
-            return prod.productId._id
-          })
+      await ApiService.get_product_id(props.match.params.id).then(
+        (apiResponse) => {
+          console.log(apiResponse.data);
+          setTheProduct(apiResponse.data);
+        }
+      );
+      if (props.user) {
+        await ApiService.get_wishlist(props).then((responseFromAPI) => {
+          responseFromAPI.data.includes(props.match.params.id)
+            ? setTheHeart(true)
+            : setTheHeart(false);
+        });
+        await ApiService.get_cartlist(props).then((responseFromAPI) => {
+          const productsID = responseFromAPI.data.map((prod) => {
+            return prod.productId._id;
+          });
           console.log(productsID);
           console.log(props.match.params.id);
-          productsID.includes(props.match.params.id) ? (setinTheCart(true)) : (setinTheCart(false));
-        
-      });
-    }
+          productsID.includes(props.match.params.id)
+            ? setinTheCart(true)
+            : setinTheCart(false);
+        });
+      }
 
-    setIsLoading(false);
+      setIsLoading(false);
     }
     anyName();
   }, []);
@@ -52,7 +52,7 @@ const Product = (props) => {
     inTheCart
       ? ApiService.delete_from_cart(props.match.params.id)
       : ApiService.add_to_cart(props.match.params.id);
-      setinTheCart(!inTheCart)
+    setinTheCart(!inTheCart);
   }
 
   return (
@@ -120,9 +120,24 @@ const Product = (props) => {
               </ul>
             </div>
           </div>
-          <div>
-            <h1 className='text-dark d-flex justify-content-center bold'>Price: {theProduct.originalPrice} €</h1>
-          </div>
+          {theProduct.actualPrice ? (
+            <div>
+              <strike className="text-danger">
+                <h1 className="text-dark d-flex justify-content-center bold">
+                  Price:&nbsp; {theProduct.originalPrice} €
+                </h1>
+              </strike>
+              <h1 className="text-dark d-flex justify-content-center bold">
+                Offer Price:&nbsp; {theProduct.actualPrice} €
+              </h1>
+            </div>
+          ) : (
+            <div>
+              <h1 className="text-dark d-flex justify-content-center bold">
+                Price: {theProduct.originalPrice} €
+              </h1>
+            </div>
+          )}
 
           <div>
             {inTheCart ? (
@@ -135,7 +150,7 @@ const Product = (props) => {
                   class="text-light fa fa-shopping-cart mr-3"
                   aria-hidden="true"
                 />
-                 Remove from cart 
+                Remove from cart
               </button>
             ) : (
               <button
@@ -150,8 +165,6 @@ const Product = (props) => {
                 Add to Cart
               </button>
             )}
-            
-            
           </div>
 
           {/* <h3 className="my-4">Related Products</h3>

@@ -102,7 +102,7 @@ function Home() {
 
       </footer>
     </div>
-  )
+  );
 }
 
 export default Home;
