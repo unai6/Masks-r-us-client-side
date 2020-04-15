@@ -1,0 +1,115 @@
+/*SIGNUP*/
+
+@media (max-width: 650px){
+    
+.container{
+    
+height:100vh
+
+}
+
+.background-image-signup{
+
+    background: url('https://drive.google.com/uc?export=download&id=12QacgkK7qhaDEDmUzjVV2koysufcViMO')  no-repeat center center;
+    background-size: cover;
+    box-sizing: border-box;
+    height: 100vh;
+    position:relative;
+    opacity:0.9;
+  
+
+}
+
+.signup-div{
+ 
+    position:relative;  
+}
+
+.form-container{
+    margin: 0% 20%;
+    position:relative;
+    transform: translate(5%, -20%);
+}
+
+.signup-h1 {
+    position: absolute;
+    right: 50%;
+    transform: translate(50%, 50%);
+}
+
+
+.inputs-signup {
+    line-height: 1;
+    margin: 10%;
+    border-radius:8px;
+    padding:10px;
+    position:relative;
+    transform: translate(-15px, 180px);
+    background-color:#1DCBE2;
+    border:none;
+}
+
+.submit-btn-signup {
+    border: 2px ;
+    width: 100px;
+    border-radius: 8px;
+    position: relative;
+    transform: translate(50%, 175px);
+    left: 3%;
+    border:1px solid;
+    padding:5px
+}
+
+.signup-p {
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+    transform: translate(0, 138px);
+}
+
+.linkToLogin-signup {
+    position: absolute;
+    right: 45%;
+    top: 75%;
+    color:#1DCBE2;
+    font-weight: bold;
+
+    }  
+}
+
+/***********************************************/
+
+/*LOGIN*/
+@media (max-width: 650px){
+
+.background-image-login{
+
+    background: url('https://drive.google.com/uc?export=download&id=1pEFTFfxg7rnnoutR_AFkcAjezj5WhX45')  no-repeat center center;
+    background-size: cover;
+    box-sizing: border-box;
+    height: 100vh;
+    position:relative;
+    opacity:0.9;
+
+}
+
+.linkToLogin-login {
+    position: absolute;
+    right: 45%;
+    top: 50%;
+    color:#1DCBE2;
+    font-weight: bold;
+
+    } 
+
+    .input-email-login {
+        line-height: 1;
+        margin: 10%;
+        border-radius:8px;
+        padding:10px;
+        position:relative;
+        transform: translate(-15px, 210px);
+        background-color:#1DCBE2;
+        border:none;
+    }
+}
