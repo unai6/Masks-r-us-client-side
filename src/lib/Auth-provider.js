@@ -89,7 +89,7 @@ class AuthProvider extends React.Component {
 
   render() {
    
-    const { isLoading, isLoggedin, user, editProfile } = this.state;
+    const { isLoading, isLoggedin, user } = this.state;
     const { login, logout, signup } = this;
 
     return isLoading ? (

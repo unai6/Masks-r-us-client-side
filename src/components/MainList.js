@@ -1,9 +1,8 @@
 import React from "react";
-import axios from "axios";
 import { useState, useEffect } from "react";
-import ApiService from "../lib/service.js";
 import { needAuth } from "../lib/Auth-provider";
 import { Link } from "react-router-dom";
+import ApiService from "../lib/service.js";
 
 const MainList = (props) => {
   const [data, setData] = useState([]);
@@ -11,8 +10,13 @@ const MainList = (props) => {
   const [wishMasks, setWishMasks] = useState([]);
 
   useEffect(() => {
-    axios.get(`http://localhost:4000/products`).then((apiResponse) => {
-      setData(apiResponse.data);
+  
+    ApiService.get_products().then((apiResponse) => {
+      console.log(apiResponse.data)      
+      
+      if(typeof apiResponse == 'array'){
+        setData(apiResponse.data)
+      }
     });
     // console.log(props);
     if (props.user) {
@@ -70,11 +74,11 @@ const MainList = (props) => {
                         <h5 className="text-left turquoise-color ml-2">
                           {mask.name}
                         </h5>
-                        <span className="float-right turquoise-color">
+                        <span className="float-right">
                           {mask.inWishList ? (
-                            <i className="fa fa-heart" aria-hidden="true"></i>
+                            <i className="fa fa-heart turquoise-color" aria-hidden="true"></i>
                           ) : (
-                            <i className="fa fa-heart-o" aria-hidden="true"></i>
+                            <i className="fa fa-heart-o turquoise-color" aria-hidden="true"></i>
                           )}
                         </span>
                       </div>

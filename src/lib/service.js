@@ -3,7 +3,7 @@ import axios from "axios";
 class apiService {
   constructor() {
     this.auth = axios.create({
-      baseURL: "http://localhost:4000",
+      baseURL: process.env.REACT_APP_API_URI,
       withCredentials: true,
     });
   }
@@ -32,6 +32,14 @@ class apiService {
 
   addToWishlist(id) {
     return this.auth.post(`/products/addtowishlist/${id}`)
+  }
+
+  get_products() {
+    return this.auth.get('/products')
+  }
+
+  get_product_id(id){
+    return this.auth.get(`/products/${id}`)
   }
 
 }

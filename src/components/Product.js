@@ -1,5 +1,4 @@
 import React from "react";
-import axios from "axios";
 import { useState, useEffect } from "react";
 import ApiService from "../lib/service.js";
 import { needAuth } from "../lib/Auth-provider";
@@ -15,8 +14,8 @@ const Product = (props) => {
   // console.log("Refresh");
 
   useEffect(() => {
-    axios
-      .get(`http://localhost:4000/products/${props.match.params.id}`)
+    
+    ApiService.get_product_id(props.match.params.id)
       .then((apiResponse) => {
         setTheProduct(apiResponse.data);
       });
