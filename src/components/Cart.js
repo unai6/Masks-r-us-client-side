@@ -129,7 +129,7 @@ const Cart = (props) => {
                             <input
                               className="form-control"
                               type="number"
-                              value={`${productInCart.quantity}`}
+                              value={productInCart.quantity}
                             />
                           </td>
                           <td className="text-right">
