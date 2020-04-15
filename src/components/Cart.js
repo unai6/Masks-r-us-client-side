@@ -48,7 +48,7 @@ const Cart = (props) => {
   return <div>
 
         <div>
-          <nav classNameName="navbar navbar-expand-md navbar-dark bg-dark ">
+       {/*    <nav classNameName="navbar navbar-expand-md navbar-dark bg-dark ">
             <div className="container">
               <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
@@ -86,7 +86,7 @@ const Cart = (props) => {
                 </form>
               </div>
             </div>
-          </nav>
+          </nav> */}
 
           <section className="jumbotron text-center">
             <div className="container">
