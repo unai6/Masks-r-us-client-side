@@ -5,96 +5,55 @@ import { needAuth } from "../lib/Auth-provider";
 import Loader from "react-loader-spinner";
 
 const Product = (props) => {
-  let theHeart;
-  let theCart;
+
   const [isLoading, setIsLoading] = useState(true);
   const [theProduct, setTheProduct] = useState({});
-  const [theWishlist, setTheWishlist] = useState([]);
-  const [theCartlist, setTheCartlist] = useState([]);
-  const [update, setUpdate] = useState(false);
+  const [inTheCart, setinTheCart] = useState(false)
+  const [theHeart, setTheHeart] = useState(false)
 
-  theWishlist.includes(theProduct._id) ? (theHeart = true) : (theHeart = false);
-  theCartlist.includes(theProduct._id) ? (theCart = true) : (theCart = false);
-  // console.log(theProduct)
-  // console.log("Refresh");
 
   useEffect(() => {
-    ApiService.get_product_id(props.match.params.id)
+    async function anyName() {
+      await ApiService.get_product_id(props.match.params.id)
       .then((apiResponse) => {
+        console.log(apiResponse.data);
         setTheProduct(apiResponse.data);
       });
     if (props.user) {
-      ApiService.get_wishlist(props).then((responseFromAPI) => {
-        if (responseFromAPI !== theWishlist) {
-          setTheWishlist(responseFromAPI.data);
-          // console.log(responseFromAPI.data);
-        }
+      await ApiService.get_wishlist(props).then((responseFromAPI) => {
+          responseFromAPI.data.includes(props.match.params.id) ? (setTheHeart(true)) : (setTheHeart(false));
+        
       });
-      ApiService.get_cartlist(props).then((responseFromAPI) => {
-        if (responseFromAPI !== theCartlist) {
+      await ApiService.get_cartlist(props).then((responseFromAPI) => {
+        
           const productsID = responseFromAPI.data.map(prod => {
             return prod.productId._id
           })
-          setTheCartlist(productsID);
-          // console.log(responseFromAPI.data);
-        }
+          console.log(productsID);
+          console.log(props.match.params.id);
+          productsID.includes(props.match.params.id) ? (setinTheCart(true)) : (setinTheCart(false));
+        
       });
     }
-    // console.log(props.user.wishList);
-    console.log(theCart);
 
     setIsLoading(false);
-  }, []);
-  console.log(theCart);
-
-  useEffect(() => {
-    if (props.user) {
-      ApiService.get_wishlist(props).then((responseFromAPI) => {
-        if (responseFromAPI !== theWishlist) {
-          setTheWishlist(responseFromAPI.data);
-        }
-      });
-      ApiService.get_cartlist(props).then((responseFromAPI) => {
-        if (responseFromAPI !== theCartlist) {
-          const productsID = responseFromAPI.data.map(prod => {
-            return prod.productId._id
-          })
-          setTheCartlist(productsID);
-          // console.log(responseFromAPI.data);
-        }
-      });
     }
-  }, [update]);
+    anyName();
+  }, []);
 
   function heartChange() {
     theHeart
       ? ApiService.removeFromWishlist(props.match.params.id)
       : ApiService.addToWishlist(props.match.params.id);
-    theHeart = !theHeart;
-    // console.log(theHeart);
-    setUpdate(!update);
+    setTheHeart(!theHeart);
   }
 
-  // function cartChange() {
-  //   theCart
-  //     ? ApiService.delete_from_cart(props.match.params.id)
-  //     : ApiService.add_to_cart(props.match.params.id);
-  //   theCart = !theCart;
-  //   console.log(theCart);
-  //   setUpdate(!update);
-  // }
-
-  function addToCart() {
-    ApiService.add_to_cart(props.match.params.id);
-    setUpdate(!update);
+  function cartChange() {
+    inTheCart
+      ? ApiService.delete_from_cart(props.match.params.id)
+      : ApiService.add_to_cart(props.match.params.id);
+      setinTheCart(!inTheCart)
   }
-
-  function deleteFromCart() {
-    ApiService.delete_from_cart(props.match.params.id);
-    setUpdate(!update);
-  }
-
-  // theWishlist.includes(theProduct._id) ? (theHeart = true) : (theHeart = false);
 
   return (
     <div>
@@ -164,9 +123,9 @@ const Product = (props) => {
           </div>
 
           <div>
-            {theCart ? (
+            {inTheCart ? (
               <button
-                onClick={deleteFromCart}
+                onClick={cartChange}
                 type="button"
                 class="btn btn-danger btn-lg btn-block mb-4"
               >
@@ -174,11 +133,11 @@ const Product = (props) => {
                   class="text-light fa fa-shopping-cart mr-3"
                   aria-hidden="true"
                 />
-                 Remove from your cart 
+                 Remove from cart 
               </button>
             ) : (
               <button
-                onClick={addToCart}
+                onClick={cartChange}
                 type="button"
                 class="btn btn-dark btn-lg btn-block turquoise-color mb-4"
               >
