@@ -6,15 +6,19 @@ import Loader from "react-loader-spinner";
 
 const Product = (props) => {
   let theHeart;
+  let theCart;
   const [isLoading, setIsLoading] = useState(true);
   const [theProduct, setTheProduct] = useState({});
   const [theWishlist, setTheWishlist] = useState([]);
+  const [theCartlist, setTheCartlist] = useState([]);
   const [update, setUpdate] = useState(false);
+
   theWishlist.includes(theProduct._id) ? (theHeart = true) : (theHeart = false);
+  theCartlist.includes(theProduct._id) ? (theCart = true) : (theCart = false);
+  // console.log(theProduct)
   // console.log("Refresh");
 
   useEffect(() => {
-    
     ApiService.get_product_id(props.match.params.id)
       .then((apiResponse) => {
         setTheProduct(apiResponse.data);
@@ -23,21 +27,40 @@ const Product = (props) => {
       ApiService.get_wishlist(props).then((responseFromAPI) => {
         if (responseFromAPI !== theWishlist) {
           setTheWishlist(responseFromAPI.data);
-          console.log(responseFromAPI.data);
+          // console.log(responseFromAPI.data);
+        }
+      });
+      ApiService.get_cartlist(props).then((responseFromAPI) => {
+        if (responseFromAPI !== theCartlist) {
+          const productsID = responseFromAPI.data.map(prod => {
+            return prod.productId._id
+          })
+          setTheCartlist(productsID);
+          // console.log(responseFromAPI.data);
         }
       });
     }
     // console.log(props.user.wishList);
+    console.log(theCart);
 
     setIsLoading(false);
   }, []);
+  console.log(theCart);
 
   useEffect(() => {
     if (props.user) {
       ApiService.get_wishlist(props).then((responseFromAPI) => {
         if (responseFromAPI !== theWishlist) {
           setTheWishlist(responseFromAPI.data);
-          console.log(responseFromAPI.data);
+        }
+      });
+      ApiService.get_cartlist(props).then((responseFromAPI) => {
+        if (responseFromAPI !== theCartlist) {
+          const productsID = responseFromAPI.data.map(prod => {
+            return prod.productId._id
+          })
+          setTheCartlist(productsID);
+          // console.log(responseFromAPI.data);
         }
       });
     }
@@ -48,7 +71,26 @@ const Product = (props) => {
       ? ApiService.removeFromWishlist(props.match.params.id)
       : ApiService.addToWishlist(props.match.params.id);
     theHeart = !theHeart;
-    console.log(theHeart);
+    // console.log(theHeart);
+    setUpdate(!update);
+  }
+
+  // function cartChange() {
+  //   theCart
+  //     ? ApiService.delete_from_cart(props.match.params.id)
+  //     : ApiService.add_to_cart(props.match.params.id);
+  //   theCart = !theCart;
+  //   console.log(theCart);
+  //   setUpdate(!update);
+  // }
+
+  function addToCart() {
+    ApiService.add_to_cart(props.match.params.id);
+    setUpdate(!update);
+  }
+
+  function deleteFromCart() {
+    ApiService.delete_from_cart(props.match.params.id);
     setUpdate(!update);
   }
 
@@ -118,21 +160,37 @@ const Product = (props) => {
             </div>
           </div>
           <div>
-            <span>{theProduct.originalPrice}</span>
-            <span>{theProduct.originalPrice}</span>
+            <h1 className='text-dark d-flex justify-content-center bold'>Price: {theProduct.originalPrice} €</h1>
           </div>
 
           <div>
-            <button
-              type="button"
-              class="btn btn-dark btn-lg btn-block turquoise-color mb-4"
-            >
-              <i
-                class="turquoise-color fa fa-shopping-cart"
-                aria-hidden="true"
-              />{" "}
-              Add to Cart
-            </button>
+            {theCart ? (
+              <button
+                onClick={deleteFromCart}
+                type="button"
+                class="btn btn-danger btn-lg btn-block mb-4"
+              >
+                <i
+                  class="text-light fa fa-shopping-cart mr-3"
+                  aria-hidden="true"
+                />
+                 Remove from your cart 
+              </button>
+            ) : (
+              <button
+                onClick={addToCart}
+                type="button"
+                class="btn btn-dark btn-lg btn-block turquoise-color mb-4"
+              >
+                <i
+                  class="turquoise-color fa fa-shopping-cart mr-3"
+                  aria-hidden="true"
+                />
+                Add to Cart
+              </button>
+            )}
+            
+            
           </div>
 
           {/* <h3 className="my-4">Related Products</h3>
