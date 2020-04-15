@@ -47,18 +47,6 @@ class AuthProvider extends React.Component {
       );
   }
 
-/*   
-    editProfile = (user) => {
-      const {email, shippingAddress, password} = user;
-      auth
-        .editProfile({email, shippingAddress, password})
-        .then((user) => {
-         console.log('Hola profile')
-         this.setState({isLoggedin:true, user})
-    })
-        .catch((err) => console.log(err));
-    }; */
-  
 
   signup = (user) => {
     const { email, password, shippingAddress } = user;

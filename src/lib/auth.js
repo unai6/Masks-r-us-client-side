@@ -30,12 +30,6 @@ class Auth {
     return this.auth.get("/auth/user").then(({ data }) => data);
   }
 
-  editProfile(){
-    return this.auth.post(`/auth/user/${this.props.user._id}/edit-profile`)
-    .then(({data}) => data)
-    
-    
-  }
 }
 
 const axiosRequestFunctions = new Auth();
