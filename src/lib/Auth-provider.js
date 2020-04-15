@@ -1,5 +1,5 @@
 import React from "react";
-import auth from "./auth"; 
+import auth from "./auth";
 import Loader from 'react-loader-spinner'
 const { Consumer, Provider } = React.createContext();
 
@@ -7,12 +7,12 @@ const { Consumer, Provider } = React.createContext();
 const needAuth = (WrappedComponent) => {
 
   return class extends React.Component {
-    
+
     render() {
-      
+
       return (
         <Consumer>
-          {({ login, signup, user,logout, isLoggedin }) => {
+          {({ login, signup, user, logout, isLoggedin }) => {
             return (
               <WrappedComponent
                 login={login}
@@ -37,9 +37,9 @@ class AuthProvider extends React.Component {
   componentDidMount() {
     auth
       .user()
-      .then((user) =>{
-      console.log("AuthProvider did Mount")
-    // console.log(user)
+      .then((user) => {
+        console.log("AuthProvider did Mount")
+        // console.log(user)
         this.setState({ isLoggedin: true, user: user, isLoading: false })
       })
       .catch((err) =>
@@ -50,12 +50,12 @@ class AuthProvider extends React.Component {
 
   signup = (user) => {
     const { email, password, shippingAddress } = user;
-  
+
     auth
       .signup({ email, password, shippingAddress })
       .then((user) => this.setState({ isLoggedin: true, user }))
       .catch((err) => console.log(err)
-        
+
       );
   };
 
@@ -76,27 +76,28 @@ class AuthProvider extends React.Component {
   };
 
   render() {
-   
+
     const { isLoading, isLoggedin, user } = this.state;
     const { login, logout, signup } = this;
 
     return isLoading ? (
-
-      <div><Loader
-      type="Puff"
-      color="#00BFFF"
-      height={100}
-      width={100}
-
-   /></div>
+      <div className="container h-100" >
+        <div className="row h-100 justify-content-center align-items-center"
+        ><Loader
+            type="Puff"
+            color="#00E2E1"
+            height={300}
+            width={100}
+          /></div>
+      </div>
     ) : (
-      <Provider value={{ isLoggedin, user,login, logout, signup }}>
-        {this.props.children}
-      </Provider>
-    );
+        <Provider value={{ isLoggedin, user, login, logout, signup }}>
+          {this.props.children}
+        </Provider>
+      );
   }
 }
 
-export { Consumer, needAuth }; 
+export { Consumer, needAuth };
 
 export default AuthProvider; 
