@@ -1,29 +1,106 @@
 import React from 'react'
-import MainList from '../components/MainList';
-
+import '../CSS/carousel.css'
+import { useState, useEffect } from "react";
+import Loader from "react-loader-spinner";
+import ApiService from "../lib/service.js";
 
 function Home() {
+
+  const [isLoading, setIsLoading] = useState(true);
+  const [data, setData] = useState([]);
+
+
+  useEffect(() => {
+    async function anyName() {
+
+      await ApiService.get_products().then((apiResponse) => {
+        //console.log(typeof apiResponse);
+        if (apiResponse.data.length) {
+          // console.log(apiResponse.data);
+          setData(apiResponse.data);
+        }
+      });
+      // console.log(props);
+      setIsLoading(false);
+
+    } anyName();
+
+  }, []);
+
+  const maskList = data.map(mask => {
+    return mask
+  })
+  console.log(maskList)
+
+
   return (
-    <div> 
-      
-      <div id="carouselFadeExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
-  <div class="carousel-inner" role="listbox">
-    <div class="carousel-item active">
-      <img class="d-block w-100" src="#" data-src="holder.js/900x400?theme=social" alt="First slide"/>
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="#" data-src="holder.js/900x400?theme=industrial" alt="Second slide"/>
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#carouselFadeExampleIndicators" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselFadeExampleIndicators" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
+    <div>
+
+      <div className="container">
+        <div className="row">
+          <div className="col-md-12">
+            <h4>Trending Products</h4>
+            <div id="myCarousel" className="carousel slide" data-ride="carousel" data-interval="0">
+
+              <ol className="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" className="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+              </ol>
+
+              {maskList ? maskList.map((mask) => {
+                return (
+
+                  <div className="carousel-inner">
+                    <div className="item carousel-item active">
+                      <div className="row">
+
+                        <div className="col-sm-3">
+                          <div className="thumb-wrapper">
+                            <h4>{mask.name}</h4>
+                            <p className="item-price"><strike>{mask.originalPrice}</strike> <span>{mask.actualPrice}</span></p>
+                            <div className="img-box">
+                              <img src={mask.photo} className="img-responsive img-fluid" alt="" />
+
+                            </div>
+                            <div className="star-rating">
+                              <ul className="list-inline">
+                                <li className="list-inline-item"><i className="fa fa-star"></i></li>
+                                <li className="list-inline-item"><i className="fa fa-star"></i></li>
+                                <li className="list-inline-item"><i className="fa fa-star"></i></li>
+                                <li className="list-inline-item"><i className="fa fa-star"></i></li>
+                                <li className="list-inline-item"><i className="fa fa-star-o"></i></li>
+                              </ul>
+                              <hr style={{ color: 'black', border: 'solid 1px' }} />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )
+              })
+                : null}
+              <div>
+                <a className="carousel-control left carousel-control-prev" href="#myCarousel" data-slide="prev">
+                  <i className="fa fa-angle-left"></i>
+                </a>
+                <a className="carousel-control right carousel-control-next" href="#myCarousel" data-slide="next">
+                  <i className="fa fa-angle-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+   
+      <footer className="page-footer font-small blue">
+
+
+        <div className="footer-copyright text-center py-3">© 2020 Copyright:
+    <a href="masks-r-us-firebaseapp.com/"> Masks'R'us</a>
+        </div>
+
+      </footer>
     </div>
   )
 }
