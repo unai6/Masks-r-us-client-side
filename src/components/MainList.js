@@ -60,6 +60,11 @@ const MainList = (props) => {
               onChange={(e) => setQuery(e.target.value)}
               name="query"
             />
+            {/* <span className="input-group-append">
+          <button className="btn btn-outline-light border " type="submit">
+            <i className="fa fa-search"></i>
+          </button>
+        </span> */}
           </form>
 
           {filteredData
@@ -73,20 +78,10 @@ const MainList = (props) => {
                       <div className="d-flex card-body">
                         <span className="align-self-center">
                           <img className="list-img" src={mask.photo} alt="" />
-                          {mask.actualPrice ? (
-                            <div className="text-center">
-                                <strike className="text-danger">
-                                  {mask.originalPrice} €
-                                </strike>
-                              <div className="badge badge-dark turquoise-color">
-                                {mask.actualPrice} €
-                              </div>
-                            </div>
-                          ) : (
-                            <div className="text-center">
-                              <h2>{mask.originalPrice} €</h2>
-                            </div>
-                          )}
+                          <div className="align-center">
+                            {" "}
+                            <span>{mask.originalPrice}</span>€
+                          </div>
                         </span>
                         <div>
                           <div className="card-header">
@@ -107,8 +102,8 @@ const MainList = (props) => {
                               )}
                             </span>
                           </div>
+                          {/* <h5 className="card-title">{mask.name}</h5> */}
                           <p className="card-text">{mask.description}</p>
-                          {/* <h2>{mask.originalPrice} €</h2> */}
                         </div>
                       </div>
                     </div>
@@ -116,6 +111,7 @@ const MainList = (props) => {
                 );
               })
             : null}
+          {/* <div>{filteredData ? filteredData.map(product => <p>{product.name}</p>) : null}</div> */}
         </div>
       )}
     </div>

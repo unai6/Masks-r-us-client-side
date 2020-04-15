@@ -34,8 +34,7 @@ function Home() {
 
 
   return (
-    <div>
-
+   <div>
       <div className="container">
         <div className="row">
           <div className="col-md-12">
@@ -57,11 +56,11 @@ function Home() {
                         <div className="col-sm-3">
                           <div className="thumb-wrapper">
                             <h4>{mask.name}</h4>
-                            <p className="item-price"><strike>{mask.originalPrice}</strike> <span>{mask.actualPrice}</span></p>
+                            <p className="item-price"><strike style={{fontSize:'18px', color:'red'}}>{mask.originalPrice} €</strike> <span>{mask.actualPrice} €</span></p>
                             <div className="img-box">
                               <img src={mask.photo} className="img-responsive img-fluid" alt="" />
 
-                            </div>
+                            </div> 
                             <div className="star-rating">
                               <ul className="list-inline">
                                 <li className="list-inline-item"><i className="fa fa-star"></i></li>
@@ -70,7 +69,7 @@ function Home() {
                                 <li className="list-inline-item"><i className="fa fa-star"></i></li>
                                 <li className="list-inline-item"><i className="fa fa-star-o"></i></li>
                               </ul>
-                              <hr style={{ color: 'black', border: 'solid 1px' }} />
+                              <hr style={{ color: '#00E2E1', border: 'solid 1px' }} />
                             </div>
                           </div>
                         </div>
@@ -101,7 +100,14 @@ function Home() {
         </div>
 
       </footer>
+
     </div>
+ 
+
+
+
+
+
   );
 }
 
