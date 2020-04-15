@@ -58,8 +58,10 @@ const Product = (props) => {
   return (
     <div>
       {isLoading ? (
-        <div>
-          <Loader type="Puff" color="#00BFFF" height={100} width={100} />
+        <div className="container h-100">
+          <div className="row h-100 justify-content-center align-items-center">
+            <Loader type="Puff" color="#00E2E1" height={300} width={100} />
+          </div>
         </div>
       ) : (
         <div className="container">
