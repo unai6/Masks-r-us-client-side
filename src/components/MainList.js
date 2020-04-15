@@ -60,7 +60,6 @@ const MainList = (props) => {
               onChange={(e) => setQuery(e.target.value)}
               name="query"
             />
-
           </form>
 
           {filteredData
@@ -74,9 +73,20 @@ const MainList = (props) => {
                       <div className="d-flex card-body">
                         <span className="align-self-center">
                           <img className="list-img" src={mask.photo} alt="" />
-                          <div className='text-center'>
-                            <h2>{mask.originalPrice} €</h2>
-                          </div>
+                          {mask.actualPrice ? (
+                            <div className="text-center">
+                                <strike className="text-danger">
+                                  {mask.originalPrice} €
+                                </strike>
+                              <div className="badge badge-dark turquoise-color">
+                                {mask.actualPrice} €
+                              </div>
+                            </div>
+                          ) : (
+                            <div className="text-center">
+                              <h2>{mask.originalPrice} €</h2>
+                            </div>
+                          )}
                         </span>
                         <div>
                           <div className="card-header">

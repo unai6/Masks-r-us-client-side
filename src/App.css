@@ -148,3 +148,7 @@ h3 {
 .turquoise-bg {
   background-color: #00E2E1;
 }
+
+strike {
+  font-size: small;
+}
