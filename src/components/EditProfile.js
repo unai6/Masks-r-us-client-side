@@ -1,6 +1,5 @@
 import React from "react";
 import { needAuth } from "../lib/Auth-provider";
-import { Link } from 'react-router-dom'
 import '../CSS/user-profile.css'
 import ApiService from "../lib/service";
 
@@ -19,9 +18,9 @@ class EditProfile extends React.Component {
     const { email, password, shippingAddress } = this.state;
     const id = this.props.user._id
     ApiService.edit_profile(id, email, password, shippingAddress).then(response => {
-        this.setState({
-          state:response
-        })
+      this.setState({
+        state: response
+      })
     })
     this.props.history.push('/user')
     console.log(password)
@@ -38,30 +37,28 @@ class EditProfile extends React.Component {
   render() {
     const { email, shippingAddress, password } = this.state;
     return (
-      <div className='background-color row h-100'>
+      <div className='background-color'>
         <div className="col-sm-12 my-auto">
           <div className='col-sm-12 h-100 d-table'>
             <div className="card-container col-md-4 text-center card card-block " style={{ height: '60vh' }}>
-              <img className="card-img-top" src="/images/pathToYourImage.png" alt="Card cap" />
+
               <form className="form-group col-sm-12 d-table" onSubmit={this.handleFormSubmit}>
                 <div>
                   <p> Hi, <b>{this.props.user.email}</b></p>
 
                   <input
                     type="text"
-                    className="form-control"
+                    className="form-control mb-3"
                     id="formGroupExampleInput"
                     placeholder="E-mail @"
                     name='email'
                     value={email}
                     onChange={this.handleChange}
                   />
-                </div>
-                <div className="form-group">
 
                   <input
                     type="password"
-                    className="form-control"
+                    className="form-control mb-3"
                     id="formGroupExampleInput2"
                     placeholder="New Password"
                     name='password'
@@ -72,7 +69,7 @@ class EditProfile extends React.Component {
 
                   <input
                     type="text"
-                    className="form-control"
+                    className="form-control mb-3"
                     id="formGroupExampleInput2"
                     placeholder="Shipping Address"
                     name='shippingAddress'
@@ -82,17 +79,16 @@ class EditProfile extends React.Component {
 
 
                 </div>
-                <input type='submit' value='Submit' />
+                <input className='btn btn-block text-uppercase text-light bg-dark  mt-4' type='submit' value='Submit' />
+                <button type="button" className="btn btn-lg btn-block  text-uppercase btn-danger text-light" onClick={this.props.logout}>Log out</button>
               </form>
             </div>
           </div>
         </div>
         <div className=" col-md-4 text-center" role="group" aria-label="Basic example">
 
-          <button type="button" className="btn btn-danger" onClick={this.props.logout}>Log out</button>
         </div>
         <div className="col-md-4 text-center">
-          <Link to='/'> <button id="singlebutton" name="singlebutton" className="btn btn-primary">Home</button></Link>
         </div>
       </div>
 
