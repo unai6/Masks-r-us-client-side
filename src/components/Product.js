@@ -5,54 +5,55 @@ import { needAuth } from "../lib/Auth-provider";
 import Loader from "react-loader-spinner";
 
 const Product = (props) => {
-  let theHeart;
+
   const [isLoading, setIsLoading] = useState(true);
   const [theProduct, setTheProduct] = useState({});
-  const [theWishlist, setTheWishlist] = useState([]);
-  const [update, setUpdate] = useState(false);
-  theWishlist.includes(theProduct._id) ? (theHeart = true) : (theHeart = false);
-  // console.log("Refresh");
+  const [inTheCart, setinTheCart] = useState(false)
+  const [theHeart, setTheHeart] = useState(false)
+
 
   useEffect(() => {
-    
-    ApiService.get_product_id(props.match.params.id)
+    async function anyName() {
+      await ApiService.get_product_id(props.match.params.id)
       .then((apiResponse) => {
+        console.log(apiResponse.data);
         setTheProduct(apiResponse.data);
       });
     if (props.user) {
-      ApiService.get_wishlist(props).then((responseFromAPI) => {
-        if (responseFromAPI !== theWishlist) {
-          setTheWishlist(responseFromAPI.data);
-          console.log(responseFromAPI.data);
-        }
+      await ApiService.get_wishlist(props).then((responseFromAPI) => {
+          responseFromAPI.data.includes(props.match.params.id) ? (setTheHeart(true)) : (setTheHeart(false));
+        
+      });
+      await ApiService.get_cartlist(props).then((responseFromAPI) => {
+        
+          const productsID = responseFromAPI.data.map(prod => {
+            return prod.productId._id
+          })
+          console.log(productsID);
+          console.log(props.match.params.id);
+          productsID.includes(props.match.params.id) ? (setinTheCart(true)) : (setinTheCart(false));
+        
       });
     }
-    // console.log(props.user.wishList);
 
     setIsLoading(false);
-  }, []);
-
-  useEffect(() => {
-    if (props.user) {
-      ApiService.get_wishlist(props).then((responseFromAPI) => {
-        if (responseFromAPI !== theWishlist) {
-          setTheWishlist(responseFromAPI.data);
-          console.log(responseFromAPI.data);
-        }
-      });
     }
-  }, [update]);
+    anyName();
+  }, []);
 
   function heartChange() {
     theHeart
       ? ApiService.removeFromWishlist(props.match.params.id)
       : ApiService.addToWishlist(props.match.params.id);
-    theHeart = !theHeart;
-    console.log(theHeart);
-    setUpdate(!update);
+    setTheHeart(!theHeart);
   }
 
-  // theWishlist.includes(theProduct._id) ? (theHeart = true) : (theHeart = false);
+  function cartChange() {
+    inTheCart
+      ? ApiService.delete_from_cart(props.match.params.id)
+      : ApiService.add_to_cart(props.match.params.id);
+      setinTheCart(!inTheCart)
+  }
 
   return (
     <div>
@@ -118,21 +119,37 @@ const Product = (props) => {
             </div>
           </div>
           <div>
-            <span>{theProduct.originalPrice}</span>
-            <span>{theProduct.originalPrice}</span>
+            <h1 className='text-dark d-flex justify-content-center bold'>Price: {theProduct.originalPrice} €</h1>
           </div>
 
           <div>
-            <button
-              type="button"
-              class="btn btn-dark btn-lg btn-block turquoise-color mb-4"
-            >
-              <i
-                class="turquoise-color fa fa-shopping-cart"
-                aria-hidden="true"
-              />{" "}
-              Add to Cart
-            </button>
+            {inTheCart ? (
+              <button
+                onClick={cartChange}
+                type="button"
+                class="btn btn-danger btn-lg btn-block mb-4"
+              >
+                <i
+                  class="text-light fa fa-shopping-cart mr-3"
+                  aria-hidden="true"
+                />
+                 Remove from cart 
+              </button>
+            ) : (
+              <button
+                onClick={cartChange}
+                type="button"
+                class="btn btn-dark btn-lg btn-block turquoise-color mb-4"
+              >
+                <i
+                  class="turquoise-color fa fa-shopping-cart mr-3"
+                  aria-hidden="true"
+                />
+                Add to Cart
+              </button>
+            )}
+            
+            
           </div>
 
           {/* <h3 className="my-4">Related Products</h3>

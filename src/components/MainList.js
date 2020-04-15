@@ -12,9 +12,10 @@ const MainList = (props) => {
   useEffect(() => {
   
     ApiService.get_products().then((apiResponse) => {
-      console.log(apiResponse.data)      
+      console.log(typeof(apiResponse))      
       
-      if(typeof apiResponse == 'array'){
+      if(apiResponse.data.length){
+        console.log('Algo' +apiResponse);
         setData(apiResponse.data)
       }
     });

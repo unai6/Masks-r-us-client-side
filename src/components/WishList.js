@@ -19,7 +19,11 @@ const WishList = (props) => {
   return (
     // <div classNameName="my-5 my-auto w-100 d-inline-block">
     <div>
-    <h1 className='wishtitle'>Your Wishlist</h1>
+    <section className="wishtitle jumbotron text-center">
+            <div className="container">
+              <h1 className="jumbotron-heading">Your Wishlist</h1>
+            </div>
+          </section>
       <div class="card-group">
         {wishlistHearts
           ? wishlistHearts.map((mask) => {

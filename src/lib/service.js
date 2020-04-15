@@ -19,7 +19,11 @@ class apiService {
   get_cartlist(props){
     return this.auth.get(`user/cart/${props.user._id}`)
   }
-
+  
+  add_to_cart(id){
+    return this.auth.post(`products/addtocart/${id}`)
+  }
+  
   delete_from_cart(id){
     return this.auth.delete(`products/deletefromcart/${id}`)
   }
