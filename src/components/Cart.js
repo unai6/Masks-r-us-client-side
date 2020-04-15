@@ -40,6 +40,14 @@ const Cart = (props) => {
   console.log('este es el subtotal')
   console.log(subTotal()) */
   //console.log(cartList)
+
+  const newQuantity = async (e, id) => {
+    // console.log(e.target.value);
+    // console.log(id);
+    await ApiService.updateQuantity(id, e.target.value)
+    setUpdateState(!updateState)
+  }
+
   return (
     <div>
       <div>
@@ -90,9 +98,10 @@ const Cart = (props) => {
                           <td>Stock:{productInCart.stock}</td>
                           <td>
                             <input
+                            onChange={ (e) => newQuantity(e, productInCart.productId._id)}
                               className="form-control"
                               type="number"
-                              value= {productInCart.quantity}
+                              defaultValue= {productInCart.quantity}
                             />
                           </td>
                           <td className="text-right">
