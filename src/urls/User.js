@@ -20,7 +20,7 @@ class User extends Component {
                 <div className="form-group">
 
                   <input type="text" className="form-control" id="formGroupExampleInput2" value={this.props.user.shippingAddress}/>
-                  <p>{this.props.user.shippingAddress}</p>
+               
                 </div>
           <Link to={`/user/${this.props.user._id}/edit-profile`}> <button type="button" className="btn btn-block text-uppercase text-light bg-dark  mt-3 mb-3">Edit Profile</button></Link>
           <button type="button" className="btn btn-lg btn-block  text-uppercase btn-danger text-light
