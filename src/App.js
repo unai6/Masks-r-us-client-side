@@ -27,7 +27,7 @@ class App extends Component {
   render() {
     return (
       <AuthProvider>  
-        <div>
+        <div className='container'>
         <Navbar/>
           <Switch>
             <Route exact path='/' component={Home} />
@@ -40,8 +40,8 @@ class App extends Component {
             <PrivateRoute exact path='/cart' component={Cart} />
             <Route exact path='/products/:id' component={Product} />
           </Switch>
-        </div>
         <Footer/>
+        </div>
       </AuthProvider>
     );
   }
