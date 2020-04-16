@@ -1,11 +1,10 @@
 import React from "react";
 // import '../CSS/carousel.css'
 import { useState, useEffect } from "react";
-import Loader from "react-loader-spinner";
 import ApiService from "../lib/service.js";
 
 function Home() {
-  const [isLoading, setIsLoading] = useState(true);
+  // const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -18,7 +17,7 @@ function Home() {
         }
       });
       // console.log(props);
-      setIsLoading(false);
+      // setIsLoading(false);
     }
     anyName();
   }, []);
