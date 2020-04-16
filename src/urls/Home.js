@@ -1,7 +1,38 @@
-import React from "react";
-import MainList from "../components/MainList";
+import React from 'react'
+import '../CSS/carousel.css'
+import { useState, useEffect } from "react";
+import Loader from "react-loader-spinner";
+import ApiService from "../lib/service.js";
 
 function Home() {
+
+  const [isLoading, setIsLoading] = useState(true);
+  const [data, setData] = useState([]);
+
+
+  useEffect(() => {
+    async function anyName() {
+
+      await ApiService.get_products().then((apiResponse) => {
+        //console.log(typeof apiResponse);
+        if (apiResponse.data.length) {
+          // console.log(apiResponse.data);
+          setData(apiResponse.data);
+        }
+      });
+      // console.log(props);
+      setIsLoading(false);
+
+    } anyName();
+
+  }, []);
+
+  const maskList = data.map(mask => {
+    return mask
+  })
+  console.log(maskList)
+
+
   return (
     <div
       id="carouselExampleIndicators"
