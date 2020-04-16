@@ -28,6 +28,8 @@
 .linkToLogin-signup{
     color:#1DCBE2;
     text-align: center;
+    font-size:14px;
+    text-decoration: underline
 }
 
 
@@ -52,6 +54,8 @@
    
     color:#1DCBE2;
     text-align: center;
+    font-size:14px;
+    text-decoration:underline
  
 
     } 
@@ -59,7 +63,7 @@
     .input-email-login {
       
         background-color:#1DCBE2;
-    
+        
     }
     }
 }
