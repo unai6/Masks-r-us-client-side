@@ -19,6 +19,7 @@ import {Route} from 'react-router-dom'
 import Product from "./components/Product";
 import Navbar from "./components/Navbar";
 import EditProfile from './components/EditProfile'
+import { Footer } from "./components/Footer";
 
 
 
@@ -40,6 +41,7 @@ class App extends Component {
             <Route exact path='/products/:id' component={Product} />
           </Switch>
         </div>
+        <Footer/>
       </AuthProvider>
     );
   }

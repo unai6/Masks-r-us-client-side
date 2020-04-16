@@ -152,9 +152,9 @@ const Product = (props) => {
                   </button>
                 </div>
                 <div className="col-9">
-                <a href="/cart"><button className="btn btn-warning btn-lg btn-block mb-4">
+                <a href="/cart"><button className="btn btn-dark btn-lg turquoise-color btn-block mb-4">
                     <i
-                      class="text-dark fa fa-shopping-cart"
+                      class="text-dark fa turquoise-color fa-shopping-cart"
                       aria-hidden="true"
                     />&nbsp;
                     To your Cart
@@ -166,10 +166,10 @@ const Product = (props) => {
               <button
                 onClick={cartChange}
                 type="button"
-                class="btn btn-dark btn-lg btn-block turquoise-color mb-4"
+                class="btn turquoise-bg btn-lg btn-block dark-text mb-4"
               >
                 <i
-                  class="turquoise-color fa fa-shopping-cart mr-3"
+                  class="turquoise-bg dark-text fa fa-shopping-cart mr-3"
                   aria-hidden="true"
                 />
                 Add to Cart
