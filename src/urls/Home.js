@@ -38,7 +38,8 @@ function Home() {
           </div>
         </div>
       ) : (<div>
- <div className='text-dark turquoise-bg h-25 text-center'><b>CoVid-19:</b><br/>Please use only face masks tagged as <u><b>medical</b></u></div>
+ <div className='text-dark turquoise-bg h-25 text-center'><b>CoVid-19:</b><br/>Please use only face masks tagged as <u><b>medical</b></u></div><br/>
+     <h4 style={{textAlign:'center'}}>Featured Products</h4>
       <div
         id="carouselExampleIndicators"
         className="carousel slide d-flex"
@@ -61,10 +62,9 @@ function Home() {
               alt="First slide"
             />
             <div className="carousel-caption">
-              <h5 className="carousel-R-text">Mask 9600</h5>
-              <p className="carousel-R-text">
-              Mascarilla de Gas para pintura facial completa respirador 6800 con cartucho de filtro de carbono máscara protectora completa 6800
-              </p>
+              <h5 className="carousel-R-text">Mask 9600</h5><br/>
+              
+              <b><span style={{fontSize:'16px'}}>7.60€</span></b>
             </div>
           </div>
           <div className="carousel-item">
@@ -74,10 +74,9 @@ function Home() {
               alt="Second slide"
             />
             <div className="carousel-caption">
-              <h5 className="carousel-R-text">Mask 3600</h5>
-              <p className="carousel-R-text">
-              mascarilla para fumigación máscara de gas protección antipolvo máscara para trabajo de seguridad de spray para soldar de protección contra la contaminación
-              </p>
+              <h5 className="carousel-R-text">Mask 3600</h5><br/>
+            
+              <b><span style={{fontSize:'16px'}}>17.50€</span></b>
             </div>
           </div>
           <div className="carousel-item">
@@ -87,10 +86,8 @@ function Home() {
               alt="Third slide"
             />
             <div className="carousel-caption">
-              <h5 className="carousel-R-text">Maskin kn95 plus</h5>
-              <p className="carousel-R-text">
-              Máscara antipolvo máscara facial no tejida con válvula antipolvo N95 PM 2,5 mascarilla respiradora con válvula
-              </p>
+              <h5 className="carousel-R-text">Maskin kn95 plus</h5><br/>
+              <b><span style={{fontSize:'16px'}}>6.50€</span></b>
             </div>
           </div>
         </div>
@@ -122,7 +119,7 @@ function Home() {
 
 
       {/* secon carousel */}
-      <div className='text-dark turquoise-bg h-50 text-center'><b>TOP Offers</b><br/>Only for the next 24 hours<u><b>Check it!</b></u></div>
+      <div className='text-dark bg-warning h-50 text-center'><b><h3>TOP Offers</h3></b>Only for the next 24 hours<u><b> Check it!</b></u></div>
       <div
         id="secondCarousel"
         className="carousel slide d-flex"
@@ -145,10 +142,9 @@ function Home() {
               alt="First slide"
             />
             <div className="carousel-caption">
-              <h5 className="carousel-R-text">MaskChin 4500</h5>
-              <p className="carousel-R-text">
-              ;áscara antipolvo máscara facial no tejida con válvula antipolvo N95 PM 2,5 mascarilla respiradora con válvula
-              </p>
+              <h5 className="carousel-R-text">MaskChin 4500</h5><br/>
+             
+              <b><span className='text-success' style={{fontSize:'16px'}}>2.50€</span></b> <b><strike className='text-danger'> 4.50€</strike></b>
             </div>
           </div>
           <div className="carousel-item">
@@ -158,10 +154,9 @@ function Home() {
               alt="Second slide"
             />
             <div className="carousel-caption">
-              <h5 className="carousel-R-text">Antidusty</h5>
-              <p className="carousel-R-text">
-              Mascarillas N95 máscara con respirador respiración Válvula de kn95 kf95 boca máscara filtro facial enmascarado PM2.5 máscaras ffp1 FFP2 FFP3 KF94 n95 máscara
-              </p>
+              <h5 className="carousel-R-text">Antidusty</h5><br/>
+              
+              <b><span className='text-success' style={{fontSize:'16px'}}> 4.70€</span></b><b><strike className='text-danger'> 9.50€</strike></b>
             </div>
           </div>
           <div className="carousel-item">
@@ -171,10 +166,9 @@ function Home() {
               alt="Third slide"
             />
             <div className="carousel-caption">
-              <h5 className="carousel-R-text">MaskDust</h5>
-              <p className="carousel-R-text">
-                Máscara especialmente diseñada para transpirar y retener las partículas de polvo.
-              </p>
+              <h5 className="carousel-R-text">MaskDust</h5><br/>
+            
+              <b><span  className='text-success' style={{fontSize:'16px'}}>12.50€ </span></b> <b><strike className='text-danger'> 24.50€</strike></b>
             </div>
           </div>
         </div>
