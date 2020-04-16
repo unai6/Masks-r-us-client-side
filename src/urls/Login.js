@@ -24,12 +24,12 @@ class Login extends Component {
 
     return (
       <div className='signup-div background-image-login'>
-        <h1 className=' signup-h1'>Login</h1>
+        <h1 className=' signup-h1 p-2'>Login</h1>
 
-        <form className='form-container' onSubmit={this.handleFormSubmit}>
+        <form className= 'form-container form-group col-sm-12 d-table p-5' onSubmit={this.handleFormSubmit}>
         
           <input
-            className ='input-email-login'
+           className="form-control mb-3" id="formGroupExampleInput"
             type='email'
             name='email'
             placeholder='Email @'
@@ -39,7 +39,7 @@ class Login extends Component {
 
          
           <input
-            className ='inputs-signup'  
+          className="form-control" id="formGroupExampleInput2" 
             type='password'
             name='password'
             placeholder='Password'
@@ -47,11 +47,11 @@ class Login extends Component {
             onChange={this.handleChange}
           />
 
-          <input className ='submit-btn-signup' type='submit' value='Login' />
+          <input className="btn btn-block text-uppercase text-light bg-dark  mt-3 mb-3" type='submit' value='Login' />
           
         </form>
-        <p className='signup-p'>Don't have an account??</p>
-        <Link className='linkToLogin-login' to={"/signup"}> Signup</Link>
+        <p className='signup-p'><b>Don't have an account?</b></p>
+        <Link to={"/signup"}><b><p className='linkToLogin-signup'>Sign Up</p></b></Link>
       </div>
     );
   }

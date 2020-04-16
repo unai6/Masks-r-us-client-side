@@ -15,62 +15,22 @@
 
 }
 
-.signup-div{
- 
-    position:relative;  
-}
-
-.form-container{
-    margin: 0% 20%;
-    position:relative;
-    transform: translate(5%, -20%);
-}
 
 .signup-h1 {
-    position: absolute;
-    right: 50%;
-    transform: translate(50%, 50%);
+   text-align: center;
 }
 
-
-.inputs-signup {
-    line-height: 1;
-    margin: 10%;
-    border-radius:8px;
-    padding:10px;
-    position:relative;
-    transform: translate(-15px, 180px);
-    background-color:#1DCBE2;
-    border:none;
-}
-
-.submit-btn-signup {
-    border: 2px ;
-    width: 100px;
-    border-radius: 8px;
-    position: relative;
-    transform: translate(50%, 175px);
-    left: 3%;
-    border:1px solid;
-    padding:5px
-}
-
-.signup-p {
-    font-weight: bold;
+.signup-p{
     text-align: center;
-    position: relative;
-    transform: translate(0, 138px);
-}
-
-.linkToLogin-signup {
-    position: absolute;
-    right: 45%;
-    top: 75%;
-    color:#1DCBE2;
     font-weight: bold;
-
-    }  
 }
+
+.linkToLogin-signup{
+    color:#1DCBE2;
+    text-align: center;
+}
+
+
 
 /***********************************************/
 
@@ -87,24 +47,19 @@
     opacity:0.9;
 
 }
-
+ 
 .linkToLogin-login {
-    position: absolute;
-    right: 45%;
-    top: 50%;
+   
     color:#1DCBE2;
-    font-weight: bold;
+    text-align: center;
+ 
 
     } 
 
     .input-email-login {
-        line-height: 1;
-        margin: 10%;
-        border-radius:8px;
-        padding:10px;
-        position:relative;
-        transform: translate(-15px, 210px);
+      
         background-color:#1DCBE2;
-        border:none;
+    
+    }
     }
 }
