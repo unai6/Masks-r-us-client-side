@@ -45,8 +45,8 @@ class apiService {
     return this.auth.get(`/products/${id}`)
   }
 
-  edit_profile(id, email, shippingAdress, password){
-    return this.auth.post(`/auth/user/${id}/edit-profile`, {email, shippingAdress, password})
+  edit_profile(id, email,  password, shippingAddress){
+    return this.auth.post(`/auth/user/${id}/edit-profile`, {email, password, shippingAddress})
   }
 
   updateQuantity(id, quantity) {

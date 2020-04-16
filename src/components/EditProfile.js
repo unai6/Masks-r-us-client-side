@@ -2,6 +2,7 @@ import React from "react";
 import { needAuth } from "../lib/Auth-provider";
 import '../CSS/user-profile.css'
 import ApiService from "../lib/service";
+import {Link} from 'react-router-dom'
 
 class EditProfile extends React.Component {
   constructor(props) {
@@ -12,17 +13,18 @@ class EditProfile extends React.Component {
 
   }
 
-  handleFormSubmit = event => {
+  handleFormSubmit = async event => {
     event.preventDefault();
 
     const { email, password, shippingAddress } = this.state;
     const id = this.props.user._id
-    ApiService.edit_profile(id, email, password, shippingAddress).then(response => {
-      this.setState({
-        state: response
-      })
+    ApiService.edit_profile(id, email, password, shippingAddress)
+     .then(response => { 
+       this.setState({
+         infoSent:true
+       })
+      //this.props.history.push('/user')
     })
-    this.props.history.push('/user')
     console.log(password)
     console.log(shippingAddress);
     console.log(email);
@@ -33,6 +35,7 @@ class EditProfile extends React.Component {
     this.setState({ [name]: value });
 
   };
+
 
   render() {
     const { email, shippingAddress, password } = this.state;
@@ -79,8 +82,13 @@ class EditProfile extends React.Component {
 
 
                 </div>
-                <input className='btn btn-block text-uppercase text-light bg-dark  mt-4' type='submit' value='Submit' />
+                {this.state.infoSent ? <button onClick={() => this.props.history.push('/user')}> Back to Profile </button> : (
+               
+                <>
+                <button className='btn btn-block text-uppercase text-light bg-dark  mt-4' type='submit' value='Submit'>Submit</button>
                 <button type="button" className="btn btn-lg btn-block  text-uppercase btn-danger text-light" onClick={this.props.logout}>Log out</button>
+                </>
+                )}
               </form>
             </div>
           </div>

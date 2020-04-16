@@ -4,6 +4,12 @@ import { Link } from 'react-router-dom'
 import '../CSS/user-profile.css'
 
 class User extends Component {
+
+  state= {
+    email: this.props.email,
+    shippingAddress: this.props.shippingAddress
+  }
+
   render() {
     //  console.log(this.props)
     return (
