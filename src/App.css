@@ -152,3 +152,29 @@ h3 {
 strike {
   font-size: small;
 }
+
+.carousel-control-next-icon {
+  background-color: #00E2E1;
+  opacity: 1;
+
+}
+
+.carousel-control-next-icon {
+  height: 30vw;
+  width: 10vw;
+}
+.carousel-control-prev-icon {
+  background-color: #00E2E1;
+  opacity: 1;
+}
+
+.carousel-control-prev-icon {
+  height: 30vw;
+  width: 10vw;
+
+}
+
+.carousel-R-text {
+  background-color: rgba(52, 58, 64, 0.5);
+  color: #00E2E1;
+}
