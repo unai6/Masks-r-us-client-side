@@ -42,6 +42,8 @@ class Signup extends React.Component {
     return (
       <div className='signup-div background-image-signup' >
         <h1 className=' signup-h1 p-2'>Sign Up</h1>
+        <p className='signup-p'>Already have account?</p>
+        <Link to={"/login"}><b><p className='linkToLogin-signup'>Login</p></b> </Link>
         <form className='form-container form-group col-sm-12 d-table p-5' onSubmit={this.handleFormSubmit}>
         
         {this.state.errorMessage ? <p >{this.state.errorMessage}</p> : null}
@@ -87,8 +89,6 @@ class Signup extends React.Component {
           <input className="btn btn-block text-uppercase text-light bg-dark  mt-3 mb-3" type='submit' value='Signup' />
         </form>
 
-        <p className='signup-p'>Already have account?</p>
-        <Link to={"/login"}><b><p className='linkToLogin-signup'>Login</p></b> </Link>
       </div>
     );
   }

@@ -26,6 +26,8 @@ class Login extends Component {
       <div className='signup-div background-image-login'>
         <h1 className=' signup-h1 p-2'>Login</h1>
 
+        <p className='signup-p'><b>Don't have an account?</b></p>
+        <Link to={"/signup"}><b><p className='linkToLogin-signup'>Sign Up</p></b></Link>
         <form className= 'form-container form-group col-sm-12 d-table p-5' onSubmit={this.handleFormSubmit}>
         
           <input
@@ -50,8 +52,6 @@ class Login extends Component {
           <input className="btn btn-block text-uppercase text-light bg-dark  mt-3 mb-3" type='submit' value='Login' />
           
         </form>
-        <p className='signup-p'><b>Don't have an account?</b></p>
-        <Link to={"/signup"}><b><p className='linkToLogin-signup'>Sign Up</p></b></Link>
       </div>
     );
   }

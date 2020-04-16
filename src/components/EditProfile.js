@@ -2,7 +2,7 @@ import React from "react";
 import { needAuth } from "../lib/Auth-provider";
 import '../CSS/user-profile.css'
 import ApiService from "../lib/service";
-import {Link} from 'react-router-dom'
+
 
 class EditProfile extends React.Component {
   constructor(props) {
