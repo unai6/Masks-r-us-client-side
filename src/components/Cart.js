@@ -177,7 +177,7 @@ const Cart = (props) => {
               </div>
             </div>
 
-            <footer className="text-light">
+            {/* <footer className="text-light">
               <div className="container">
                 <div className="row">
                   <div className="col-md-3 col-lg-4 col-xl-3">
@@ -224,7 +224,7 @@ const Cart = (props) => {
                   </div>
                 </div>
               </div>
-            </footer>
+            </footer> */}
           </div>
         </div>
       </div>

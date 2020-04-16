@@ -82,11 +82,11 @@ function Home() {
           <div className="carousel-item">
             <img
               className="d-block w-100 "
-              src="https://ae01.alicdn.com/kf/H2ae29a535056477f985635b3ce36ff304/Unsex-Masks-Antidust-Mouth-Face-Mask-Muzzle-Pm2-5-Antibacterial-Outdoor-Trip-Protection-Mouth-Mask-Mascarillas.jpg"
+              src="https://ae01.alicdn.com/kf/He989394f739048868b399f8ef130ef281/Star-War-Darth-Vader-Mask-The-Black-Series-Cosplay-Adult-Helmet-Premium-PVC-Helmet-Prop-for.jpg"
               alt="Third slide"
             />
             <div className="carousel-caption">
-              <h5 className="carousel-R-text">Maskin kn95 plus</h5><br/>
+              <h5 className="carousel-R-text">Luke Dad</h5><br/>
               <b><span style={{fontSize:'16px'}}>6.50€</span></b>
             </div>
           </div>
