@@ -1,18 +1,14 @@
-import React from 'react'
-import '../CSS/carousel.css'
+import React from "react";
+// import '../CSS/carousel.css'
 import { useState, useEffect } from "react";
-import Loader from "react-loader-spinner";
 import ApiService from "../lib/service.js";
 
 function Home() {
-
-  const [isLoading, setIsLoading] = useState(true);
+  // const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState([]);
-  const [query, setQuery] = useState("");
 
   useEffect(() => {
     async function anyName() {
-
       await ApiService.get_products().then((apiResponse) => {
         //console.log(typeof apiResponse);
         if (apiResponse.data.length) {
@@ -21,100 +17,104 @@ function Home() {
         }
       });
       // console.log(props);
-      setIsLoading(false);
-
-    } anyName();
-
+      // setIsLoading(false);
+    }
+    anyName();
   }, []);
 
-
-  const filteredData = data.filter((product) =>
-    product.name.toLocaleLowerCase().includes(query.toLocaleLowerCase())
-  );
-  console.log(filteredData)
+  const maskList = data.map((mask) => {
+    return mask;
+  });
+  console.log(maskList);
 
   return (
-     <div>
-     <form className="">
-              <input
-                type="text"
-                className="input-group searchproduct-form form-control border"
-                placeholder="Search for..."
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
-                name="query"
-              />
-        </form>
-        <div className="container">
-          <div className="row">
-            <div className="col-md-12">
-              <h4>Trending Products</h4>
-              <div id="myCarousel" className="carousel slide" data-ride="carousel" data-interval="0">
-  
-                <ol className="carousel-indicators">
-                  <li data-target="#myCarousel" data-slide-to="0" className="active"></li>
-                  <li data-target="#myCarousel" data-slide-to="1"></li>
-                </ol>
-  
-                {filteredData ? filteredData.map((mask) => {
-                  return (
-  
-                    <div className="carousel-inner">
-                      <div className="item carousel-item active">
-                        <div className="row">
-  
-                          <div className="col-sm-3">
-                            <div className="thumb-wrapper">
-                              <h4>{mask.name}</h4>
-                              <p className="item-price"><strike style={{fontSize:'18px', color:'red'}}>{mask.originalPrice} €</strike> <span>{mask.actualPrice} €</span></p>
-                              <div className="img-box">
-                                <img src={mask.photo} className="img-responsive img-fluid" alt="" />
-  
-                              </div> 
-                              <div className="star-rating">
-                                <ul className="list-inline">
-                                  <li className="list-inline-item"><i className="fa fa-star"></i></li>
-                                  <li className="list-inline-item"><i className="fa fa-star"></i></li>
-                                  <li className="list-inline-item"><i className="fa fa-star"></i></li>
-                                  <li className="list-inline-item"><i className="fa fa-star"></i></li>
-                                  <li className="list-inline-item"><i className="fa fa-star-o"></i></li>
-                                </ul>
-                                <hr style={{ color: '#00E2E1', border: 'solid 1px' }} />
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  )
-                })
-                  : null}
-                <div>
-                  <a className="carousel-control left carousel-control-prev" href="#myCarousel" data-slide="prev">
-                    <i className="fa fa-angle-left"></i>
-                  </a>
-                  <a className="carousel-control right carousel-control-next" href="#myCarousel" data-slide="next">
-                    <i className="fa fa-angle-right"></i>
-                  </a>
-                </div>
-              </div>
+    <div>
+      <div>CoVid-19: Please use only face masks tagged as 'medical'</div>
+      <div
+        id="carouselExampleIndicators"
+        className="carousel slide d-flex"
+        data-ride="carousel"
+      >
+        <ol className="carousel-indicators">
+          <li
+            data-target="#carouselExampleIndicators"
+            data-slide-to="0"
+            className="active"
+          ></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div className="carousel-inner">
+          <div className="carousel-item active">
+            <img
+              className="d-block w-100"
+              src="https://ae01.alicdn.com/kf/Hc32e6c42971a45609dcf8cd083ba3b404/7pcs-Organic-Vapor-Full-Face-Respirator-Mask-Gas-Mask-Paint-Pesticide-Chemical-Formaldehyde-Anti-Virus-Respiratory.jpg"
+              alt="First slide"
+            />
+            <div className="carousel-caption">
+              <h5 className="carousel-R-text">MASK-NAME</h5>
+              <p className="carousel-R-text">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel,
+                dolore. Ducimus consequuntur,
+              </p>
+            </div>
+          </div>
+          <div className="carousel-item">
+            <img
+              className="d-block w-100"
+              src="https://ae01.alicdn.com/kf/H1e8b1309bf3b418ba9d3eb366fbdec159/3600-Half-Face-Gas-Mask-Particulate-Respirator-with-Filter-Cartridge-Protective-Mask-Personal-Protective-Equippment-dust.jpg"
+              alt="Second slide"
+            />
+            <div className="carousel-caption">
+              <h5 className="carousel-R-text">MASK-NAME</h5>
+              <p className="carousel-R-text">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel,
+                dolore. Ducimus consequuntur, cum ex illum blanditiis dolor
+                distinctio dignissimos
+              </p>
+            </div>
+          </div>
+          <div className="carousel-item">
+            <img
+              className="d-block w-100"
+              src="https://ae01.alicdn.com/kf/H2ae29a535056477f985635b3ce36ff304/Unsex-Masks-Antidust-Mouth-Face-Mask-Muzzle-Pm2-5-Antibacterial-Outdoor-Trip-Protection-Mouth-Mask-Mascarillas.jpg"
+              alt="Third slide"
+            />
+            <div className="carousel-caption">
+              <h5 className="carousel-R-text">MASK-NAME</h5>
+              <p className="carousel-R-text">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel,
+                dolore. Ducimus consequuntur,
+              </p>
             </div>
           </div>
         </div>
-     
-        <footer className="page-footer font-small blue">
-  
-  
-          <div className="footer-copyright text-center py-3">© 2020 Copyright:
-      <a href="masks-r-us-firebaseapp.com/"> Masks'R'us</a>
-          </div>
-  
-        </footer>
-  
-      </div> 
-
-  
-  
+        <a
+          className="carousel-control-prev "
+          href="#carouselExampleIndicators"
+          role="button"
+          data-slide="prev"
+        >
+          <span
+            className="carousel-control-prev-icon"
+            aria-hidden="true"
+          ></span>
+          <span className="sr-only ">Previous</span>
+        </a>
+        <a
+          className="carousel-control-next"
+          href="#carouselExampleIndicators"
+          role="button"
+          data-slide="next"
+        >
+          <span
+            className="carousel-control-next-icon"
+            aria-hidden="true"
+          ></span>
+          <span className="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
   );
 }
 
