@@ -185,7 +185,7 @@ const Cart = (props) => {
                     <hr className="bg-dark mb-2 mt-0 d-block mx-auto w-25" />
                     <p style={{ color: "black" }} className="mb-0">
                       Here you will find the best customer service Ever. Trust
-                      us and you will no regret it.
+                      us and you will not regret it.
                     </p>
                   </div>
 
