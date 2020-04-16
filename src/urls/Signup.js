@@ -41,12 +41,13 @@ class Signup extends React.Component {
     
     return (
       <div className='signup-div background-image-signup' >
-        <h1 className=' signup-h1'>Sign Up</h1>
-        <form className='form-container' onSubmit={this.handleFormSubmit}>
+        <h1 className=' signup-h1 p-2'>Sign Up</h1>
+        <form className='form-container form-group col-sm-12 d-table p-5' onSubmit={this.handleFormSubmit}>
         
         {this.state.errorMessage ? <p >{this.state.errorMessage}</p> : null}
 
-          <input className ='inputs-signup' 
+          <input className="form-control mb-3"
+          id="formGroupExampleInput"
             type='email'
             name='email'
             value={email}
@@ -55,7 +56,8 @@ class Signup extends React.Component {
           />
 
         
-          <input className ='inputs-signup'
+          <input className="form-control mb-3"
+          id="formGroupExampleInput2"
             type='password'
             name='password'
             value={password}
@@ -63,7 +65,8 @@ class Signup extends React.Component {
             placeholder='Password'
           />
 
-          <input className ='inputs-signup'
+          <input className="form-control mb-3"
+          id="formGroupExampleInput3"
             type='password'
             name='confirmPassword'
             value={confirmPassword}
@@ -71,7 +74,8 @@ class Signup extends React.Component {
             placeholder='Confirm password'
           />
 
-          <input className ='inputs-signup'
+          <input className="form-control"
+          id="formGroupExampleInput4"
             type='text'
             name='shippingAddress'
             value={shippingAddress}
@@ -80,11 +84,11 @@ class Signup extends React.Component {
           />
 
 
-          <input className ='submit-btn-signup' type='submit' value='Signup' />
+          <input className="btn btn-block text-uppercase text-light bg-dark  mt-3 mb-3" type='submit' value='Signup' />
         </form>
 
         <p className='signup-p'>Already have account?</p>
-        <Link className='linkToLogin-signup' to={"/login"}> Login</Link>
+        <Link to={"/login"}><b><p className='linkToLogin-signup'>Login</p></b> </Link>
       </div>
     );
   }

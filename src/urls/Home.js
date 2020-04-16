@@ -3,6 +3,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import ApiService from "../lib/service.js";
 import Loader from "react-loader-spinner";
+import {Link} from 'react-router-dom'
 
 function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -39,7 +40,7 @@ function Home() {
         </div>
       ) : (<div>
  <div className='text-dark turquoise-bg h-25 text-center'><b>CoVid-19:</b><br/>Please use only face masks tagged as <u><b>medical</b></u></div><br/>
-     <h4 style={{textAlign:'center'}}>Featured Products</h4>
+   <Link to='/products'><h4 style={{textAlign:'center'}}>Featured Products</h4></Link> 
       <div
         id="carouselExampleIndicators"
         className="carousel slide d-flex"
