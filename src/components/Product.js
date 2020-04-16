@@ -141,17 +141,27 @@ const Product = (props) => {
 
           <div>
             {inTheCart ? (
-              <button
-                onClick={cartChange}
-                type="button"
-                class="btn btn-danger btn-lg btn-block mb-4"
-              >
-                <i
-                  class="text-light fa fa-shopping-cart mr-3"
-                  aria-hidden="true"
-                />
-                Remove from cart
-              </button>
+              <div className="row">
+                <div className="col-3">
+                  <button
+                    onClick={cartChange}
+                    type="button"
+                    className="btn btn-danger btn-lg btn-block mb-4"
+                  >
+                    <i class="text-light fas fa-trash-alt" aria-hidden="true" />
+                  </button>
+                </div>
+                <div className="col-9">
+                <a href="/cart"><button className="btn btn-warning btn-lg btn-block mb-4">
+                    <i
+                      class="text-dark fa fa-shopping-cart"
+                      aria-hidden="true"
+                    />&nbsp;
+                    To your Cart
+                  </button></a>
+                  
+                </div>
+              </div>
             ) : (
               <button
                 onClick={cartChange}
