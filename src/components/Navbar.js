@@ -93,7 +93,7 @@ const Navbar = (props) => {
                     aria-haspopup="true"
                     aria-expanded="false"
                   >
-                    Your Acconut
+                    Your Account
                   </a>
 
                   <div
