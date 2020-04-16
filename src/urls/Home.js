@@ -87,7 +87,7 @@ function Home() {
               alt="Third slide"
             />
             <div className="carousel-caption">
-              <h5 className="carousel-R-text">Luke Dad</h5><br/>
+              <h5 className="carousel-R-text">Luke's Dad</h5><br/>
               <b><span style={{fontSize:'16px'}}>6.50€</span></b>
             </div>
           </div>
