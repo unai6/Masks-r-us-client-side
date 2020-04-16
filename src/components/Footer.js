@@ -35,7 +35,7 @@ export const Footer = () => {
             </li>
           </ul>
         </div>
-      <div className="bg-dark turquoise-color text-center footer-text">
+      <div className="bg-dark turquoise-color text-center footer-text m-3">
         Here you will find the best customer service Ever. Trust us and you will
         not regret it.
       </div>
