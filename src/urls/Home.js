@@ -30,7 +30,7 @@ function Home() {
 
   return (
     <div>
-      <div>CoVid-19: Please use only face masks tagged as 'medical'</div>
+      <div className='text-dark turquoise-bg h-25 text-center'><b>CoVid-19:</b><br/>Please use only face masks tagged as <u><b>medical</b></u></div>
       <div
         id="carouselExampleIndicators"
         className="carousel slide d-flex"
