@@ -2,7 +2,7 @@ import React from "react";
 
 export const Footer = () => {
   return (
-    <div className='container-fluid'>
+    <div className='container-fluid px-0'>
       <div className="bg-dark row">
         <div className="col-6 text-light px-2 pt-1">
           <h5 className="text-center text-light d-block">Our Store</h5>
@@ -35,7 +35,7 @@ export const Footer = () => {
             </li>
           </ul>
         </div>
-      <div className="px-2 bg-dark turquoise-color text-center footer-text">
+      <div className="bg-dark turquoise-color text-center footer-text">
         Here you will find the best customer service Ever. Trust us and you will
         not regret it.
       </div>
