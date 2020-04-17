@@ -12,7 +12,7 @@ export const Footer = () => {
             <li className="turquoise-color footer-text">About us</li>
             <li className="turquoise-color footer-text">FAQ</li>
             <li className="turquoise-color footer-text">Shipping</li>
-           <Link to='https://www.bbc.com/news/coronavirus'><li className="turquoise-color footer-text">Covid News</li></Link>
+           <a href='https://www.bbc.com/news/coronavirus'><li className="turquoise-color footer-text">Covid News</li></a>
           </ul>
         </div>
         <div className="col-6 text-light px-2 pt-1">
