@@ -63,9 +63,9 @@ function Home() {
               alt="First slide"
             />
             <div className="carousel-caption">
-              <h5 className="carousel-R-text">Mask 9600</h5><br/>
+            <Link to='products'><h5 className="carousel-R-text">Mask 9600</h5><br/></Link>  
               
-              <b><span style={{fontSize:'16px'}}>7.60€</span></b>
+              <b><span style={{fontSize:'16px', backgroundColor:'white', borderRadius:'8px'}}>7.60€</span></b>
             </div>
           </div>
           <div className="carousel-item">
@@ -75,9 +75,9 @@ function Home() {
               alt="Second slide"
             />
             <div className="carousel-caption">
-              <h5 className="carousel-R-text">Mask 3600</h5><br/>
+            <Link to='products'><h5 className="carousel-R-text">Mask 3600</h5><br/></Link>
             
-              <b><span style={{fontSize:'16px'}}>17.50€</span></b>
+              <b><span style={{fontSize:'16px' , backgroundColor:'white', borderRadius:'8px'}}>17.50€</span></b>
             </div>
           </div>
           <div className="carousel-item">
@@ -87,8 +87,8 @@ function Home() {
               alt="Third slide"
             />
             <div className="carousel-caption">
-              <h5 className="carousel-R-text">Luke's Dad</h5><br/>
-              <b><span style={{fontSize:'16px'}}>6.50€</span></b>
+            <Link to='products'><h5 className="carousel-R-text">Luke's Dad</h5><br/></Link>
+              <b><span style={{fontSize:'16px' , backgroundColor:'white', borderRadius:'8px'}}>6.50€</span></b>
             </div>
           </div>
         </div>
@@ -143,9 +143,9 @@ function Home() {
               alt="First slide"
             />
             <div className="carousel-caption">
-              <h5 className="carousel-R-text">MaskChin 4500</h5><br/>
+            <Link to='products'><h5 className="carousel-R-text">MaskChin 4500</h5><br/></Link>
              
-              <b><span className='text-success' style={{fontSize:'16px'}}>2.50€</span></b> <b><strike className='text-danger'> 4.50€</strike></b>
+              <b><span className='text-success' style={{fontSize:'16px',  backgroundColor:'white', borderRadius:'8px'}}>2.50€</span></b> <b><strike className='text-danger'> 4.50€</strike></b>
             </div>
           </div>
           <div className="carousel-item">
@@ -155,9 +155,9 @@ function Home() {
               alt="Second slide"
             />
             <div className="carousel-caption">
-              <h5 className="carousel-R-text">Antidusty</h5><br/>
+            <Link to='products'> <h5 className="carousel-R-text">Antidusty</h5><br/></Link>
               
-              <b><span className='text-success' style={{fontSize:'16px'}}> 4.70€</span></b><b><strike className='text-danger'> 9.50€</strike></b>
+              <b><span className='text-success' style={{fontSize:'16px',  backgroundColor:'white', borderRadius:'8px'}}> 4.70€</span></b><b><strike className='text-danger'> 9.50€</strike></b>
             </div>
           </div>
           <div className="carousel-item">
@@ -167,9 +167,9 @@ function Home() {
               alt="Third slide"
             />
             <div className="carousel-caption">
-              <h5 className="carousel-R-text">MaskDust</h5><br/>
+            <Link to='products'><h5 className="carousel-R-text">MaskDust</h5><br/></Link>
             
-              <b><span  className='text-success' style={{fontSize:'16px'}}>12.50€ </span></b> <b><strike className='text-danger'> 24.50€</strike></b>
+              <b><span  className='text-success' style={{fontSize:'16px', }}>12.50€ </span></b> <b><strike className='text-danger'> 24.50€</strike></b>
             </div>
           </div>
         </div>
