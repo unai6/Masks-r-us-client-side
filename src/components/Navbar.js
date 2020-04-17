@@ -25,21 +25,21 @@ const Navbar = (props) => {
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav">
             <li class="nav-item active">
-              <a class="nav-link" href="/products">
+            <b><a class="nav-link"  style={{color:'white'}} href="/products">
                 Our Masks <span class="sr-only">(current)</span>
-              </a>
+              </a></b>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/cart">
                 <button type="button" class="btn btn-warning">
-                  Shopping Cart
+                 <span>Shopping Cart 🛒</span> 
                 </button>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/wishlist">
                 <button type="button" class="btn btn-outline-warning">
-                  Your Wishlist
+                  Your Wishlist ♡
                 </button>
               </a>
             </li>

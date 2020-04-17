@@ -169,7 +169,7 @@ function Home() {
             <div className="carousel-caption">
             <Link to='products'><h5 className="carousel-R-text">MaskDust</h5><br/></Link>
             
-              <b><span  className='text-success' style={{fontSize:'16px', }}>12.50€ </span></b> <b><strike className='text-danger'> 24.50€</strike></b>
+              <b><span  className='text-success' style={{fontSize:'16px',  backgroundColor:'white', borderRadius:'8px'}}>12.50€ </span></b> <b><strike className='text-danger'> 24.50€</strike></b>
             </div>
           </div>
         </div>
