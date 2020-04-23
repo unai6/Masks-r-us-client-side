@@ -58,19 +58,22 @@ const Product = (props) => {
   return (
     <div>
       {isLoading ? (
-        <div className="container h-100">
+        <div className="container">
           <div className="row h-100 justify-content-center align-items-center">
             <Loader type="Puff" color="#00E2E1" height={300} width={100} />
           </div>
         </div>
       ) : (
-        <div className="container">
+        <div className="container product-container mb-4">
           <h1 className="turquoise-color my-1">{theProduct.name}</h1>
           <h2>by {theProduct.brand}</h2>
+          <a href="/products">
+          <div className="altgreen-color text-left"><i class="fas fa-arrow-left"></i> Back to products</div>
+          </a>
 
           <div className="row">
             <div className="col-md-8">
-              <img className="img-fluid" src={theProduct.photo} alt="" />
+              <img className="img-fluid w-75" src={theProduct.photo} alt="" />
             </div>
 
             <div className="col-md-4">
@@ -141,39 +144,53 @@ const Product = (props) => {
 
           <div>
             {inTheCart ? (
-              <div className="row">
-                <div className="col-3">
-                  <button
-                    onClick={cartChange}
-                    type="button"
-                    className="btn btn-danger btn-lg btn-block mb-4"
-                  >
-                    <i class="text-light fas fa-trash-alt" aria-hidden="true" />
-                  </button>
+              <div>
+                <div className="row mx-auto col-sm-6">
+                  <div className="col-3">
+                    <button
+                      onClick={cartChange}
+                      type="button"
+                      className="btn btn-danger btn-lg btn-block mb-4"
+                    >
+                      <i
+                        class="text-light fas fa-trash-alt"
+                        aria-hidden="true"
+                      />
+                    </button>
+                  </div>
+                  <div className="col-9">
+                    <a href="/cart">
+                      <button className="btn btn-dark btn-lg turquoise-color btn-block mb-4">
+                        <i
+                          class="text-dark fa turquoise-color fa-shopping-cart"
+                          aria-hidden="true"
+                        />
+                        &nbsp; To your Cart
+                      </button>
+                    </a>
+                  </div>
                 </div>
-                <div className="col-9">
-                <a href="/cart"><button className="btn btn-dark btn-lg turquoise-color btn-block mb-4">
-                    <i
-                      class="text-dark fa turquoise-color fa-shopping-cart"
-                      aria-hidden="true"
-                    />&nbsp;
-                    To your Cart
-                  </button></a>
-                  
-                </div>
+                <a href="/products">
+                  <div className="altgreen-color text-center"><i class="fas fa-arrow-left"></i> Back to products</div>
+                </a>
               </div>
             ) : (
-              <button
-                onClick={cartChange}
-                type="button"
-                class="btn turquoise-bg btn-lg btn-block dark-text mb-4"
-              >
-                <i
-                  class="turquoise-bg dark-text fa fa-shopping-cart mr-3"
-                  aria-hidden="true"
-                />
-                Add to Cart
-              </button>
+              <div>
+                <button
+                  onClick={cartChange}
+                  type="button"
+                  class="btn turquoise-bg btn-lg btn-block dark-text mb-4"
+                >
+                  <i
+                    class="turquoise-bg dark-text fa fa-shopping-cart mr-3"
+                    aria-hidden="true"
+                  />
+                  Add to Cart
+                </button>
+                <a href="/products">
+                <div className="altgreen-color text-center"><i class="fas fa-arrow-left"></i> Back to products</div>
+                </a>
+              </div>
             )}
           </div>
 

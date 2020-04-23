@@ -62,6 +62,10 @@
   color: #343a40;
 }
 
+.altgreen-color {
+  color: #343a40;
+}
+
 .turquoise-color {
   color: #00E2E1!important;
 }
@@ -101,12 +105,13 @@ h5 {
 
 h2 {
   font-family: 'Roboto Slab', serif;
-  font-size: 5vw;
+  /* font-size: 3hw; */
   color: #343a40;
 }
 
 h1 {
   font-family: 'Roboto Slab', serif;
+  /* font-size: 5vw; */
 }
 
 h3 {
@@ -189,3 +194,7 @@ strike {
   background-color: #00E2E1;
 }
 
+
+.product-container {
+  max-width: 900px;
+}
