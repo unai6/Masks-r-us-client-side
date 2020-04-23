@@ -81,7 +81,7 @@ const Product = (props) => {
                       onClick={heartChange}
                       class="badge badge-dark heart-button "
                     >
-                      In your wishlist{" "}
+                      In your wishlist
                       <i
                         class="turquoise-color fa fa-heart "
                         aria-hidden="true"
@@ -92,7 +92,7 @@ const Product = (props) => {
                       onClick={heartChange}
                       class="badge badge-dark heart-button "
                     >
-                      Add it to your wishlist{" "}
+                      Add it to your wishlist
                       <i
                         class="turquoise-color fa fa-heart-o"
                         aria-hidden="true"
@@ -102,7 +102,7 @@ const Product = (props) => {
                 </div>
               ) : (
                 <div class="my-3 float-right badge badge-dark">
-                  <i class="turquoise-color fa fa-heart-o" aria-hidden="true" />{" "}
+                  <i class="turquoise-color fa fa-heart-o" aria-hidden="true" />
                   You need to <a href="/login">login</a> to add products to your
                   wishlist.
                 </div>

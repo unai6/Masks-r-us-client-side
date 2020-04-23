@@ -13,6 +13,8 @@
   color: #343a40;
 }
 
+
+
 .container{
   max-width: 100vw;
 }
@@ -187,6 +189,3 @@ strike {
   background-color: #00E2E1;
 }
 
-.footer-text {
-  font-size: 3vw;
-}

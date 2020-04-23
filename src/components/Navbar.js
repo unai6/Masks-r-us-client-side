@@ -32,7 +32,7 @@ const Navbar = (props) => {
             <li class="nav-item">
               <a class="nav-link" href="/cart">
                 <button type="button" class="btn btn-warning">
-                 <span>Shopping Cart 🛒</span> 
+                 Shopping Cart 👤
                 </button>
               </a>
             </li>

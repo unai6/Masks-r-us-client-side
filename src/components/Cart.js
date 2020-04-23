@@ -61,7 +61,7 @@ const Cart = (props) => {
 
         <div className="container mb-4">
           <div className="row">
-            <div className="col-12">
+            <div className="col-sm-12 col-lg-6 mx-auto">
               <div className="table-responsive">
                 <table className="table table-striped">
                   <thead>
@@ -176,55 +176,6 @@ const Cart = (props) => {
                 </div>
               </div>
             </div>
-
-            {/* <footer className="text-light">
-              <div className="container">
-                <div className="row">
-                  <div className="col-md-3 col-lg-4 col-xl-3">
-                    <h5 className= 'text-center d-block'>About</h5>
-                    <hr className="bg-dark mb-2 mt-0 d-block mx-auto w-25" />
-                    <p style={{ color: "black" }} className="mb-0">
-                      Here you will find the best customer service Ever. Trust
-                      us and you will not regret it.
-                    </p>
-                  </div>
-
-                  <div className="col-md-3 col-lg-2 col-xl-2 mx-auto">
-                    <h5 className= 'text-center d-block'>Others links</h5>
-                    <hr className="bg-dark mb-2 mt-0 d-block mx-auto w-25" />
-                    <ul  style={{ color: "black" }} className="list-unstyled text-center d-block">
-                      <li>About us</li>
-                      <li>FAQ</li>
-                    </ul>
-                  </div>
-
-                  <div className="col-md-4 col-lg-3 col-xl-3">
-                    <h5 className= 'text-center d-block'>Contact</h5>
-                    <hr className="bg-dark mb-2 mt-0 d-block mx-auto w-25" />
-                    <ul style={{ color: "black" }} className="list-unstyled text-center d-block">
-                      <li>
-                        <i className="fa fa-home mr-2"></i> Mask 'R' us
-                      </li>
-                      <li>
-                        <i className="fa fa-envelope mr-2"></i>
-                        maskrus@gmail.com
-                      </li>
-                      <li>
-                        <i className="fa fa-phone mr-2"></i> + 93 230 02 21
-                      </li>
-                      <li>
-                        <i className="fa fa-print mr-2"></i> + 669 12 12 43
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="col-12 copyright mt-3">
-                    <p className="float-left">
-                      <a href="#">Back to top</a>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </footer> */}
           </div>
         </div>
       </div>
