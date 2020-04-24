@@ -50,7 +50,7 @@ const MainList = (props) => {
           </div>
         </div>
       ) : (
-        <div className="my-5 my-auto w-100 d-inline-block">
+        <div className="my-auto ">
           <form className="">
             <input
               type="text"
@@ -66,62 +66,64 @@ const MainList = (props) => {
           </button>
         </span> */}
           </form>
+          <div className="cards-container d-flex row justify-content-center m-3">
+            {filteredData
+              ? filteredData.map((mask) => {
+                  return (
+                    <div className="my-3 col-12 col-sm-8 col-md-6 col-lg-3">
+                      <div class="container">
+                        <div class="row">
+                          <div class="">
+                            <div class="card">
+                              <img
+                                class="card-img"
+                                src={mask.photo}
+                                alt="Vans"
+                              />
 
-          {filteredData
-            ? filteredData.map((mask) => {
-                return (
-                  <Link to={`/products/${mask._id}`} className="card-text-link">
-                    <div
-                      key={mask._id}
-                      className="card border-info mb-1 shadow"
-                    >
-                      <div className="d-flex card-body">
-                        <span className="align-self-center">
-                          <img className="list-img" src={mask.photo} alt="" />
-                          {mask.actualPrice ? (
-                            <div className="text-center">
-                                <strike className="text-danger">
-                                  {mask.originalPrice} €
-                                </strike>
-                              <div className="badge badge-dark turquoise-color">
-                                {mask.actualPrice} €
+                              <div class="card-body">
+                                <h4 class="card-title turquoise-color">{mask.name}</h4>
+                                <h6 class="card-subtitle mb-2 text-muted">
+                                  SKU: {mask._id.substr(-7)}
+                                </h6>
+                                <p class="card-text">{mask.description}</p>
+
+                                <div class="buy d-flex justify-content-between align-items-center">
+                                  <div class="price text-success">
+                                    <h5 class="mt-4">{mask.originalPrice}</h5>
+                                  </div>
+                                  <div class="d-flex justify-content-end">
+                                    {mask.inWishList ? (
+                                      <i
+                                        className="fa m-3 fa-heart turquoise-color"
+                                        aria-hidden="true"
+                                      ></i>
+                                    ) : (
+                                      <i
+                                        className="fa m-3 fa-heart-o turquoise-color"
+                                        aria-hidden="true"
+                                      ></i>
+                                    )}
+
+                                    <Link to={`/products/${mask._id}`}>
+                                      <button className="btn btn-dark turquoise-color">
+                                        <i class="fas turquoise-color fa-info-circle"></i> More
+                                        info...
+                                      </button>
+                                    </Link>
+                                  </div>
+                                  {/* <Link to={`/products/${mask._id}`}>More info</Link> */}
+                                </div>
                               </div>
                             </div>
-                          ) : (
-                            <div className="text-center">
-                              <h2>{mask.originalPrice} €</h2>
-                            </div>
-                          )}
-                        </span>
-                        <div>
-                          <div className="card-header">
-                            <h5 className="text-left turquoise-color ml-2">
-                              {mask.name}
-                            </h5>
-                            <span className="float-right">
-                              {mask.inWishList ? (
-                                <i
-                                  className="fa fa-heart turquoise-color"
-                                  aria-hidden="true"
-                                ></i>
-                              ) : (
-                                <i
-                                  className="fa fa-heart-o turquoise-color"
-                                  aria-hidden="true"
-                                ></i>
-                              )}
-                            </span>
                           </div>
-                          {/* <h5 className="card-title">{mask.name}</h5> */}
-                          <p className="card-text">{mask.description}</p>
                         </div>
                       </div>
                     </div>
-                  </Link>
-                );
-              })
-            : null}
-          {/* <div>{filteredData ? filteredData.map(product => <p>{product.name}</p>) : null}</div> */}
+                  );
+                })
+              : null}
+          </div>
         </div>
       )}
     </div>
