@@ -43,7 +43,7 @@ class EditProfile extends React.Component {
       <div className='background-color'>
         <div className="col-sm-12 my-auto">
           <div className='col-sm-12 h-100 d-table'>
-            <div className="card-container col-md-4 text-center card card-block " style={{ height: '60vh' }}>
+            <div className="card-container col-md-4 col-lg-6 mx-auto text-center card card-block " style={{ height: '40vh', lineHeight:'5' }}>
 
               <form className="form-group col-sm-12 d-table" onSubmit={this.handleFormSubmit}>
                 <div>

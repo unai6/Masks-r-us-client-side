@@ -93,25 +93,25 @@ function Home() {
           </div>
         </div>
         <a
-          className="carousel-control-prev col-lg-3 h-50"
+          className="carousel-control-prev col-lg-3"
           href="#carouselExampleIndicators"
           role="button"
           data-slide="prev"
         >
           <span
-            className="carousel-control-prev-icon col-lg-3 h-50"
+            className="carousel-control-prev-icon col-lg-3"
             aria-hidden="true"
           ></span>
           <span className="sr-only ">Previous</span>
         </a>
         <a
-          className="carousel-control-next col-lg-3 h-50"
+          className="carousel-control-next col-lg-3"
           href="#carouselExampleIndicators"
           role="button"
           data-slide="next"
         >
           <span
-            className="carousel-control-next-icon col-lg-3 h-50"
+            className="carousel-control-next-icon col-lg-3"
             aria-hidden="true"
           ></span>
           <span className="sr-only">Next</span>
@@ -174,25 +174,25 @@ function Home() {
           </div>
         </div>
         <a
-          className="carousel-control-prev col-lg-3 h-50"
+          className="carousel-control-prev col-lg-3"
           href="#secondCarousel"
           role="button"
           data-slide="prev"
         >
           <span
-            className="carousel-control-prev-icon col-lg-3 h-50"
+            className="carousel-control-prev-icon col-lg-3"
             aria-hidden="true"
           ></span>
           <span className="sr-only ">Previous</span>
         </a>
         <a
-          className="carousel-control-next col-lg-3 h-50"
+          className="carousel-control-next col-lg-3"
           href="#secondCarousel"
           role="button"
           data-slide="next"
         >
           <span
-            className="carousel-control-next-icon col-lg-3 h-50"
+            className="carousel-control-next-icon col-lg-3"
             aria-hidden="true"
           ></span>
           <span className="sr-only">Next</span>
