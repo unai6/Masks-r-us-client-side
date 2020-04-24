@@ -58,7 +58,7 @@ function Home() {
         <div className="carousel-inner">
           <div className="carousel-item active">
             <img
-              className="d-block w-100 "
+              className="d-block w-100 col-lg-4 mx-auto   "
               src="https://ae01.alicdn.com/kf/Hc32e6c42971a45609dcf8cd083ba3b404/7pcs-Organic-Vapor-Full-Face-Respirator-Mask-Gas-Mask-Paint-Pesticide-Chemical-Formaldehyde-Anti-Virus-Respiratory.jpg"
               alt="First slide"
             />
@@ -70,7 +70,7 @@ function Home() {
           </div>
           <div className="carousel-item">
             <img
-              className="d-block w-100 "
+              className="d-block w-100 col-lg-4 mx-auto  "
               src="https://ae01.alicdn.com/kf/H1e8b1309bf3b418ba9d3eb366fbdec159/3600-Half-Face-Gas-Mask-Particulate-Respirator-with-Filter-Cartridge-Protective-Mask-Personal-Protective-Equippment-dust.jpg"
               alt="Second slide"
             />
@@ -82,7 +82,7 @@ function Home() {
           </div>
           <div className="carousel-item">
             <img
-              className="d-block w-100 "
+              className="d-block w-100 col-lg-4 mx-auto  "
               src="https://ae01.alicdn.com/kf/He989394f739048868b399f8ef130ef281/Star-War-Darth-Vader-Mask-The-Black-Series-Cosplay-Adult-Helmet-Premium-PVC-Helmet-Prop-for.jpg"
               alt="Third slide"
             />
@@ -93,25 +93,25 @@ function Home() {
           </div>
         </div>
         <a
-          className="carousel-control-prev "
+          className="carousel-control-prev col-lg-3 h-50"
           href="#carouselExampleIndicators"
           role="button"
           data-slide="prev"
         >
           <span
-            className="carousel-control-prev-icon"
+            className="carousel-control-prev-icon col-lg-3 h-50"
             aria-hidden="true"
           ></span>
           <span className="sr-only ">Previous</span>
         </a>
         <a
-          className="carousel-control-next"
+          className="carousel-control-next col-lg-3 h-50"
           href="#carouselExampleIndicators"
           role="button"
           data-slide="next"
         >
           <span
-            className="carousel-control-next-icon"
+            className="carousel-control-next-icon col-lg-3 h-50"
             aria-hidden="true"
           ></span>
           <span className="sr-only">Next</span>
@@ -138,7 +138,7 @@ function Home() {
         <div className="carousel-inner">
           <div className="carousel-item active">
             <img
-              className="d-block w-100 "
+              className="d-block w-100 col-lg-4 mx-auto"
               src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRpM-aWUFaCYMx4xrlQOHPbOq8kuzFBANRMevj3G1bN05fkDZYGPE3LTpk2HAfgwgg6D5aKv4OiLjsTjpuPmj78HNmlyuejkBhPJ86yS1z7IvQBRVYCiK1V&usqp=CAE"
               alt="First slide"
             />
@@ -150,7 +150,7 @@ function Home() {
           </div>
           <div className="carousel-item">
             <img
-              className="d-block w-100 "
+              className="d-block w-100 col-lg-4 mx-auto  "
               src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTd8PVAHcpjx4_QXIcskbauh683D0jUbb3ZANsBLNGT3ijkgeVhzaga465lrnRDH8UnBOAEZs9Ug83EU2QZxk3GtgIiEXBedANStHd-Da3k481zllbow1uh&usqp=CAE"
               alt="Second slide"
             />
@@ -162,7 +162,7 @@ function Home() {
           </div>
           <div className="carousel-item">
             <img
-              className="d-block w-100 "
+              className="d-block w-100 col-lg-4 mx-auto  "
               src="https://ae01.alicdn.com/kf/H2ae29a535056477f985635b3ce36ff304/Unsex-Masks-Antidust-Mouth-Face-Mask-Muzzle-Pm2-5-Antibacterial-Outdoor-Trip-Protection-Mouth-Mask-Mascarillas.jpg"
               alt="Third slide"
             />
@@ -174,25 +174,25 @@ function Home() {
           </div>
         </div>
         <a
-          className="carousel-control-prev "
+          className="carousel-control-prev col-lg-3 h-50"
           href="#secondCarousel"
           role="button"
           data-slide="prev"
         >
           <span
-            className="carousel-control-prev-icon"
+            className="carousel-control-prev-icon col-lg-3 h-50"
             aria-hidden="true"
           ></span>
           <span className="sr-only ">Previous</span>
         </a>
         <a
-          className="carousel-control-next"
+          className="carousel-control-next col-lg-3 h-50"
           href="#secondCarousel"
           role="button"
           data-slide="next"
         >
           <span
-            className="carousel-control-next-icon"
+            className="carousel-control-next-icon col-lg-3 h-50"
             aria-hidden="true"
           ></span>
           <span className="sr-only">Next</span>
