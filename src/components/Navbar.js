@@ -7,12 +7,12 @@ const Navbar = (props) => {
 
   return (
     <div>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="/">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a className="navbar-brand" href="/">
           <img src="IronHack.png" alt="" />
         </a>
         <button
-          class="navbar-toggler"
+          className="navbar-toggler"
           type="button"
           data-toggle="collapse"
           data-target="#navbarNavDropdown"
@@ -20,39 +20,39 @@ const Navbar = (props) => {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav">
-            <li class="nav-item active">
-            <b><a class="nav-link"  style={{color:'white'}} href="/products">
-                Our Masks <span class="sr-only">(current)</span>
+        <div className="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul className="navbar-nav">
+            <li className="nav-item active">
+            <b><a className="nav-link"  style={{color:'white'}} href="/products">
+                Our Masks <span className="sr-only">(current)</span>
               </a></b>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/cart">
-                <button type="button" class="btn btn-warning">
+            <li className="nav-item">
+              <a className="nav-link" href="/cart">
+                <button type="button" className="btn btn-warning">
                  Shopping Cart 👤
                 </button>
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/wishlist">
-                <button type="button" class="btn btn-outline-warning">
+            <li className="nav-item">
+              <a className="nav-link" href="/wishlist">
+                <button type="button" className="btn btn-outline-warning">
                   Your Wishlist ♡
                 </button>
               </a>
             </li>
-            {/* <li class="nav-item">
-              <a class="nav-link" href="#">
+            {/* <li className="nav-item">
+              <a className="nav-link" href="#">
                 Contact
               </a>
             </li> */}
             {props.user ? (
               <div>
-                <li class="nav-item dropdown">
+                <li className="nav-item dropdown">
                   <a
-                    class="nav-link dropdown-toggle"
+                    className="nav-link dropdown-toggle"
                     href="#"
                     id="navbarDropdownMenuLink"
                     role="button"
@@ -64,28 +64,28 @@ const Navbar = (props) => {
                   </a>
 
                   <div
-                    class="dropdown-menu"
+                    className="dropdown-menu"
                     aria-labelledby="navbarDropdownMenuLink"
                   >
-                    <a class="dropdown-item" href="/cart">
+                    <a className="dropdown-item" href="/cart">
                       Shopping Cart  🛒
                     </a>
-                    <a class="dropdown-item" href="/wishlist">
+                    <a className="dropdown-item" href="/wishlist">
                       Wishlist ♡
                     </a>
-                    <a class="dropdown-item" href="/user">
+                    <a className="dropdown-item" href="/user">
                       Your profile 👤
                     </a>
-                    {/* <a class="dropdown-item" href="#">
+                    {/* <a className="dropdown-item" href="#">
                 </a> */}
                   </div>
                 </li>
               </div>
             ) : (
               <div>
-                <li class="nav-item dropdown">
+                <li className="nav-item dropdown">
                   <a
-                    class="nav-link dropdown-toggle"
+                    className="nav-link dropdown-toggle"
                     href="#"
                     id="navbarDropdownMenuLink"
                     role="button"
@@ -97,16 +97,16 @@ const Navbar = (props) => {
                   </a>
 
                   <div
-                    class="dropdown-menu"
+                    className="dropdown-menu"
                     aria-labelledby="navbarDropdownMenuLink"
                   >
-                    <a class="dropdown-item" href="/login">
+                    <a className="dropdown-item" href="/login">
                       Log in
                     </a>
-                    <a class="dropdown-item" href="/signup">
+                    <a className="dropdown-item" href="/signup">
                       Sign up
                     </a>
-                    {/* <a class="dropdown-item" href="#">
+                    {/* <a className="dropdown-item" href="#">
                 </a> */}
                   </div>
                 </li>

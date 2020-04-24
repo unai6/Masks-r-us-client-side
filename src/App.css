@@ -180,8 +180,9 @@ strike {
 }
 
 .carousel-control-next-icon {
-  height: 30vw;
+ height:9vh;
   width: 10vw;
+  
 }
 .carousel-control-prev-icon {
   background-color: #00E2E1;
@@ -189,9 +190,9 @@ strike {
 }
 
 .carousel-control-prev-icon {
-  height: 30vw;
+ height:9vh;
   width: 10vw;
-
+  
 }
 
 .carousel-R-text {
@@ -206,4 +207,8 @@ strike {
 
 .product-container {
   max-width: 900px;
+}
+
+.wrap-div{
+  overflow-x:hidden
 }

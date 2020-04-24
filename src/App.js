@@ -27,7 +27,7 @@ class App extends Component {
   render() {
     return (
       <AuthProvider>  
-        <div className='container px-0'>
+        <div className='container-fluid wrap-div px-0'>
         <Navbar/>
           <Switch>
             <Route exact path='/' component={Home} />

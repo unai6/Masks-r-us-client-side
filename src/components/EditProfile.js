@@ -2,6 +2,7 @@ import React from "react";
 import { needAuth } from "../lib/Auth-provider";
 import '../CSS/user-profile.css'
 import ApiService from "../lib/service";
+import  {Link} from 'react-router-dom'
 
 
 class EditProfile extends React.Component {
@@ -42,8 +43,9 @@ class EditProfile extends React.Component {
     return (
       <div className='background-color'>
         <div className="col-sm-12 my-auto">
+      <Link to='/user'><button  className="btn btn-outline-success mt-5">Back to profile</button></Link>
           <div className='col-sm-12 h-100 d-table'>
-            <div className="card-container col-md-4 text-center card card-block " style={{ height: '60vh' }}>
+            <div className="card-container col-md-4 col-lg-6 mx-auto text-center card card-block " style={{ height: '40vh'}}>
 
               <form className="form-group col-sm-12 d-table" onSubmit={this.handleFormSubmit}>
                 <div>

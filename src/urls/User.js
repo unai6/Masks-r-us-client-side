@@ -14,9 +14,9 @@ class User extends Component {
     //  console.log(this.props)
     return (
       <div className='background-color'>
-        <div className="col-sm-12 my-auto">
+        <div className="col-sm-12 mx-auto">
           <div className='col-sm-12 h-100 d-table'>
-            <div className="card-container col-md-12 text-center card card-block " style={{ height: '40vh' }}>
+            <div className="card-container col-md-12 col-lg-6 mx-auto text-center card card-block " style={{ height: '40vh', lineHeight:'5' }}>
               <form className="form-group col-sm-12 d-table">
                 <div>
                   <p> Hi, <b>{this.props.user.email}</b></p>
