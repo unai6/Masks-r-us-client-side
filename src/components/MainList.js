@@ -70,7 +70,8 @@ const MainList = (props) => {
             {filteredData
               ? filteredData.map((mask) => {
                   return (
-                    <div className="my-3 col-12 col-sm-8 col-md-6 col-lg-3">
+                    
+                    <div className="my-3 col-12 col-sm-8 col-md-6 col-lg-3 col-xl-2">
                       <div class="container">
                         <div class="row">
                           <div class="">
