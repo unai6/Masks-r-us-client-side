@@ -25,6 +25,7 @@ const Product = (props) => {
             : setTheHeart(false);
         });
         await ApiService.get_cartlist(props).then((responseFromAPI) => {
+          //console.log(responseFromAPI)
           const productsID = responseFromAPI.data.map((prod) => {
             return prod.productId._id;
           });

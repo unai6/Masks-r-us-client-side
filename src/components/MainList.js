@@ -4,10 +4,15 @@ import { needAuth } from "../lib/Auth-provider";
 import { Link } from "react-router-dom";
 import ApiService from "../lib/service.js";
 import Loader from "react-loader-spinner";
+import Paginator from 'react-hooks-paginator';
 
 const MainList = (props) => {
+  const pageLimit = 20;
   const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState([]);
+  const[currentData, setCurrentData] = useState([]);
+  const [offset, setOffset] = useState(0);
+  const [currentPage, setCurrentPage] = useState(1);
   const [query, setQuery] = useState("");
   const [wishMasks, setWishMasks] = useState([]);
 
@@ -27,14 +32,20 @@ const MainList = (props) => {
       });
     }
     setIsLoading(false);
-  }, []);
+  }, [props]);
 
-  const filteredData = data.filter((product) =>
-    product.name.toLocaleLowerCase().includes(query.toLocaleLowerCase())
-  );
+  useEffect(() => {
+      setCurrentData(data.slice(offset, offset + pageLimit))
+      setIsLoading(false)
+  }, [offset, data])
 
-  filteredData.map((mask) => {
-    if (wishMasks.includes(mask._id)) {
+  const filteredData = currentData.filter((product) =>
+    product.description.toLocaleLowerCase().includes(query.toLocaleLowerCase())
+  )
+//console.log(data)
+
+  currentData.map((mask) => {
+      if (wishMasks.includes(mask._id)) {
       mask.inWishList = true;
     } else {
       mask.inWishList = false;
@@ -90,7 +101,7 @@ const MainList = (props) => {
 
                                 <div class="buy d-flex justify-content-between align-items-center">
                                   <div class="price text-success">
-                                    <h5 class="mt-4">{mask.originalPrice}</h5>
+                                    <h5 class="mt-4">{mask.originalPrice}€</h5>
                                   </div>
                                   <div class="d-flex justify-content-end">
                                     {mask.inWishList ? (
@@ -126,6 +137,14 @@ const MainList = (props) => {
           </div>
         </div>
       )}
+      
+      <Paginator   
+        totalRecords={data.length}
+        pageLimit={pageLimit}
+        pageNeighbours={0}
+        setOffset={setOffset}
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage}/>
     </div>
   );
 };
