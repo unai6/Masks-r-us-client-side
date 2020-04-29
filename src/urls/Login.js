@@ -23,7 +23,7 @@ class Login extends Component {
     const { email, password } = this.state;
 
     return (
-      <div className='signup-div background-image-login'>
+      <div className='signup-div background-image-login' style={{height:'100vh'}}>
         <h1 className=' signup-h1 p-2'>Login</h1>
 
         <p className='signup-p'><b>Don't have an account?</b></p>

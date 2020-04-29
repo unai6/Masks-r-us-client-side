@@ -40,7 +40,7 @@ class Signup extends React.Component {
     const { email, password, confirmPassword, shippingAddress} = this.state;
     
     return (
-      <div className='signup-div background-image-signup' >
+      <div className='signup-div background-image-signup' style={{height:'100vh'}} >
         <h1 className=' signup-h1 p-2'>Sign Up</h1>
         <p className='signup-p'><b>Already have account?</b></p>
         <Link to={"/login"}><b><p className='linkToLogin-signup'>Login</p></b> </Link>

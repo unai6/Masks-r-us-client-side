@@ -67,3 +67,31 @@
     }
     }
 }
+
+
+@media (min-width: 720px){
+
+.background-image-signup{
+
+    background: url('https://images.pexels.com/photos/3951355/pexels-photo-3951355.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')  no-repeat center center;
+    background-size: cover;
+    box-sizing: border-box;
+    height: 100vh;
+    position:relative;
+    opacity:0.9;
+  
+
+}
+
+.background-image-login{
+
+    background: url('https://images.pexels.com/photos/3951367/pexels-photo-3951367.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')  no-repeat center center;
+    background-size: cover;
+    box-sizing: border-box;
+    height: 100vh;
+    position:relative;
+    opacity:0.9;
+
+}
+
+}
