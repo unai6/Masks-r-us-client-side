@@ -28,7 +28,7 @@ class Login extends Component {
 
         <p className='signup-p'><b>Don't have an account?</b></p>
         <Link to={"/signup"}><b><p className='linkToLogin-signup'>Sign Up</p></b></Link>
-        <form className= 'form-container form-group col-sm-12 d-table p-5' onSubmit={this.handleFormSubmit}>
+        <form className= 'form-container form-group col-sm-12 d-table p-5 mx-auto w-100 col-lg-6' onSubmit={this.handleFormSubmit}>
         
           <input
            className="form-control mb-3" id="formGroupExampleInput"

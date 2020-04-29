@@ -44,7 +44,7 @@ class Signup extends React.Component {
         <h1 className=' signup-h1 p-2'>Sign Up</h1>
         <p className='signup-p'><b>Already have account?</b></p>
         <Link to={"/login"}><b><p className='linkToLogin-signup'>Login</p></b> </Link>
-        <form className='form-container form-group col-sm-12 d-table p-5' onSubmit={this.handleFormSubmit}>
+        <form className='form-container form-group col-sm-12 d-table p-5 mx-auto w-100 col-lg-6' onSubmit={this.handleFormSubmit}>
         
         {this.state.errorMessage ? <p >{this.state.errorMessage}</p> : null}
 
