@@ -35,7 +35,7 @@ const MainList = (props) => {
   }, [props]);
 
   useEffect(() => {
-      setCurrentData(data.slice(offset, offset + pageLimit))
+      setCurrentData(data.slice(offset, offset + pageLimit));
       setIsLoading(false)
   }, [offset, data])
 
@@ -45,11 +45,7 @@ const MainList = (props) => {
 //console.log(data)
 
   currentData.map((mask) => {
-      if (wishMasks.includes(mask._id)) {
-      mask.inWishList = true;
-    } else {
-      mask.inWishList = false;
-    }
+    return wishMasks.includes(mask._id) ? mask.inWishList = true : mask.inWishList = false
   });
 
   return (
